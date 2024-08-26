@@ -38,7 +38,7 @@ SECRET_KEY = 'django-insecure-2h#cib-=&ltp92x_3uzxt4(90gcpgjv-*5_m7$@qtw91x6@193
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['shivam-car-prediction2-13.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['shivam-car-prediction2-14.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -137,11 +137,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Default primary key field type
