@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="../static/css/signin.css">
+
+    <style>
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: transparent;
+    width: 92%;
+}
+input::placeholder {
+    color: white;
+  }
+  button[type="submit"] {
+    padding: 10px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+label{
+    color: #fff;
+}
+a{
+    color: deepskyblue;
+}
+h3 {
+    margin-top: 0;
+    text-align: center;
+    color: white;
+}
+input {
+  color: white;
+}
+
+button{
+          border-radius: 10px;
+    background: transparent;
+    color: white;
+        }
+
+
+    </style>
+</head>
+<body style="background: url(../static/img/car.jpg);">
+
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{% endfor %}
+
+
+<div class="container" style="  max-width: 400px;
+margin: 50px auto;
+padding: 20px;
+border-radius: 5px;
+background: transparent;
+box-shadow: inset 5px 5px 11px rgba(0, 0, 0, 0.2), inset -5px -5px 11px rgba(255, 255, 255, 0.75);">
+<h3>Login Page</h3>
+<form action="/signin/" method="post">
+    {% csrf_token %}
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="Enter your Username" required>
+    <br>
+
+    <label for="pass1">Password</label>
+    <div style="position: relative;">
+        <input type="password" id="pass1" name="pass1" placeholder="Enter your Password" required>
+        <button type="button" class="toggle-password" onclick="togglePassword('pass1')">Show</button>
+    </div>
+    <br>
+
+    <button type="submit">Sign In</button>
+    <span><a href="{% url 'signup' %}">Create an account</a></span>
+</form>
+
+</div>
+
+<script>
+    function togglePassword(fieldId) {
+        const passwordField = document.getElementById(fieldId);
+        const toggleButton = passwordField.nextElementSibling;
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleButton.textContent = "Hide";
+        } else {
+            passwordField.type = "password";
+            toggleButton.textContent = "Show";
+        }
+    }
+    </script>
+    
+
+</body>
+</html>

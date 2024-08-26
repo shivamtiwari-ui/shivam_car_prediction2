@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Information</title>
+    <link rel="stylesheet" href="../static/css/loan.css">
+    <link rel="stylesheet" href="../static/css/Blog.css">
+<link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="../static/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="../static/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/template.1.css">
+    <link rel="stylesheet" href="../static/css/challan.css">
+
+
+    <style>
+        .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 100px; /* Center horizontally */
+      transform: translateX(-50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px !important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center !important;
+    margin-left: 28% !important;
+      
+  }
+        
+</style>
+                   
+</head>
+<body>
+
+     <!-- ***** Header Area Start ***** -->
+     <header class="header-area header-sticky" style="background: black;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo" style="color: white;">CAR<em> VALUE</em></a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Buy a car</a>
+                              
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'delhi' %}" style="color: black;">Used car Delhi</a>
+                                    <a class="dropdown-item" href="{% url 'mumbai' %}" style="color: black;">Used car Mumbai</a>
+                                    <a class="dropdown-item" href="{% url 'banglore' %}" style="color: black;">Used car Bangalore</a>
+                                    <a class="dropdown-item" href="{% url 'ahemdabad' %}" style="color: black;">Used car Ahmedabad</a>
+                                    <a class="dropdown-item" href="{% url 'surat' %}" style="color: black;">Used car Surat</a>
+                                    <!-- <a class="dropdown-item" href="#" style="color: black;">Used car Gujarat</a> -->
+                                </div>
+                            </li>
+
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sell a car</a>
+                              
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'carvaluation' %}" style="color: black;">Used car valuation</a>
+                                    
+                                </div>
+                            </li>
+
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Car finance</a>
+                              
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'loan' %}" style="color: black;">Used car loan</a>
+                                    <!-- <a class="dropdown-item" href="#" style="color: black;">Used car loan eligiblitiy</a> -->
+                                    <!-- <a class="dropdown-item" href="#" style="color: black;">Used car loan interest rate</a> -->
+                                    <a class="dropdown-item" href="{% url 'emicalculator' %}" style="color: black;">Used car EmI calculator</a>
+                                    <!-- <a class="dropdown-item" href="#" style="color: black;">FAQ</a> -->
+                                    <!-- <a class="dropdown-item" href="#" style="color: black;">Terms</a> -->
+                                </div>
+                            </li>
+
+
+                            <li><a href="{% url 'blog' %}">Blog</a></li> 
+
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Car Service</a>
+                              
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'challan' %}" style="color: black;">View and pay challan</a>
+                                    <!-- <a class="dropdown-item" href="{% url 'blog' %}" style="color: black;">Check Vehicle details</a> -->
+                                </div>
+                            </li>
+                            <li><a href="{% url 'signup' %}">Login</a>
+                            </li>
+                            <li><a href="#"></a></li>    
+                        </ul>       
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+<!-- Hero Section -->
+
+<section class="Hero">
+    <div id="CF_LANDING_BANNER" class="Banner">
+        <div class="container" style="margin-top: 48px;">
+            <div class="row">
+                <div class="col">
+                    <div class="content">
+                        <div class="btext">
+                            <h1>Get quick and hassle-free used <br><span>car loan</span></h1>
+                            <p>Unlock the door to your dream car in just a few minutes with our pre-approved loans!</p>
+                            <div class="small">
+                                <ul class="gti">
+                                    <li>
+                                        <div class="box"><span>Get</span>0<strong>Down</strong></div>
+                                    </li>
+                                    <li>
+                                        <div class="box"><span>Tenure</span>72<strong>Months</strong></div>
+                                    </li>
+                                    <li>
+                                        <div class="box"><span>Interest</span>12%<strong>p.a.</strong></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="btn">Check eligibility in 2 min</button>
+                            <p class="_10tHN">Get free <span>CIBIL score</span> with your offer!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <picture class="_3Ke92 _2SCDa">
+                        <source media="(min-width: 447px)" srcset="https://assets.cars24.com/production/c2b-website/240420160214/js/2c789c4fa0cd5d097472a728a689e635.webp" type="image/webp">
+                        <source media="(min-width: 447px)" srcset="https://assets.cars24.com/production/c2b-website/240420160214/js/99e5ed3ce7194ce45464f2517bf4a5ac.png" type="image/png">
+                        <img class="img1" height="447" width="447" src="https://assets.cars24.com/production/c2b-website/240514154437/js/99e5ed3ce7194ce45464f2517bf4a5ac.png" alt="img" fetchpriority="high">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Hero section end -->
+
+    <!-- Choose car section -->
+    <div class="car">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="choose">Why choose <span>OUR CARS loans?</span></h2>
+                </div>
+            </div>
+            <div class="row Fcom">
+                <div class="col">
+                    <div class="Finance">
+                        <div class="_2FeT3">
+                            <img src="https://assets.cars24.com/production/c2b-website/240501142902/js/9cf8c86467e2ed0be5a8a43bd6871838.png" alt="Finance it your way!" width="100" height="100">
+                        </div>
+                        <h4 class="_1ab3v">Finance it your way!</h4>
+                        <p class="OBGmC">Customize EMIs with as low as zero down payment and up to 6-year loan tenure starting at 12% ROI</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="Finance">
+                        <div class="_2FeT3">
+                            <img src="https://assets.cars24.com/production/c2b-website/240501142902/js/c95e712ff0f57064d6c76b3217a32d27.png" alt="Loan offer in minutes" width="100" height="100">
+                        </div>
+                        <h4 class="_1ab3v">Loan offer in minutes</h4>
+                        <p class="OBGmC">Check your eligibility and get a loan offer within 2 minutes with minimal documentation</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="Finance">
+                        <div class="_2FeT3">
+                            <img src="https://assets.cars24.com/production/c2b-website/240501142902/js/6a34113740e4608cadee18d2d74fcca7.png" alt="Pan India financing" width="100" height="100">
+                        </div>
+                        <h4 class="_1ab3v">Pan India financing</h4>
+                        <p class="OBGmC">Coverage across all major Indian cities with 15,000+ serviceable PIN codes</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+     <!-- Choose car section end -->
+
+    <!-- Eligibility section -->
+    <div id="CF_ELIGIBILITY_CRITERIA">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="criteria-heading"><span>Eligibility criteria</span> and documents required</h2>
+                </div>
+            </div>
+            <div class="row criteria-items">
+                <div class="col">
+                    <div class="criteria-item">
+                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/6fff567615f5f97c0a2d5c2744e1333c.svg" alt="Profile" height="96px" width="96px">
+                        <h4 class="criteria-title">Profile</h4>
+                        <p class="criteria-description">Indian nationals aged between 21-65 years</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="criteria-item">
+                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/46d31e400d18020077ab56da4afd716f.svg" alt="Documents" height="96px" width="96px">
+                        <h4 class="criteria-title">Documents</h4>
+                        <p class="criteria-description">Aadhaar/Passport/Voter ID, PAN and bank statement</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="criteria-item">
+                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/c3f78f700e58df51e208dcde4e15576a.svg" alt="Employment" height="96px" width="96px">
+                        <h4 class="criteria-title">Employment</h4>
+                        <p class="criteria-description">Salaried/Self-employed Monthly income &gt; ₹15,000</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="criteria-item">
+                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/4f80ee440a59808725f0eeb2460bb403.svg" alt="CIBIL score" height="96px" width="96px">
+                        <h4 class="criteria-title">CIBIL score</h4>
+                        <p class="criteria-description">Greater than 650 is recommended</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Eligibility section end -->
+
+    <!-- Interest section -->
+    <div id="CF_INTEREST_RATES">
+        <div class="int-1">
+            <div class="container">
+                <div class="row int-2">
+                    <div class="col">
+                        <div class="int-3">
+                            <h2 class="heading">Used car loan <span>interest and charges</span></h2>
+                            <p class="Itext">We have outlined the various charges that might be applicable when applying for or availing a used car loan</p>
+                            <div class="itextc">
+                                <div class="Ipara">
+                                    <strong>Pre-sales charges</strong>
+                                    <p>These are expenses and fees that are incurred before the actual sale or purchase of a used vehicle</p>
+                                </div>
+                                <div class="Ipara">
+                                    <strong>Post-sales charges</strong>
+                                    <p>These refer to the expenses and fees incurred after the sale or purchase of a vehicle has been completed</p>
+                                </div>
+                                <div class="Ipara">
+                                    <strong>Collection and legal charges</strong>
+                                    <p>These charges are applicable when a car is repossessed by the lender in case of a loan default</p>
+                                </div>
+                                <div class="Ipara">
+                                    <strong>Miscellaneous charges &amp; fees</strong>
+                                    <p>There are certain miscellaneous charges and fees that may apply during a used car loan process</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="Iimage">
+                            <span class="lazy-load-image-background blur lazy-load-image-loaded" >
+                                <img src="https://assets.cars24.com/production/c2b-website/240501142902/js/1b481e01edcc39948c4b54c339fdc25d.svg" alt="finance" > 
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Interest section end -->
+
+          <!--faq questions  -->
+
+          <section class="faq-section">
+            <div class="container">
+                <div class="faq-content">
+                    <h2 class="faq-heading">Frequently asked <span>questions</span></h2>
+                </div>
+        
+                <div class="row">
+                    <div class="col-12">
+                        <div class="faq-item">
+                            <h3 class="faq-question">How many used cars available in Delhi NCR ?<img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/240420160214/js/bf6340572e7389b8b545ad752218ee5c.svg" style="width:24;height:24;transform:rotate(180deg)" alt="arrow"></h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="faq-item">
+                            <h3 class="faq-question">What is the starting price of a used car in Delhi NCR ?<img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/240420160214/js/bf6340572e7389b8b545ad752218ee5c.svg" style="width:24;height:24;transform:rotate(0deg)" alt="arrow"></h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="faq-item">
+                            <h3 class="faq-question">What are the most popular second hand car brands available in Cars Delhi NCR ?<img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/240420160214/js/bf6340572e7389b8b545ad752218ee5c.svg" style="width:24;height:24;transform:rotate(0deg)" alt="arrow"></h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="faq-item">
+                            <h3 class="faq-question">What body types are available for 2nd hand cars in Delhi NCR ?<img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/240420160214/js/bf6340572e7389b8b545ad752218ee5c.svg" style="width:24;height:24;transform:rotate(0deg)" alt="arrow"></h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="faq-item">
+                            <h3 class="faq-question">What are the best second hand cars below 5 lakhs at Cars in Delhi NCR ?<img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/240420160214/js/bf6340572e7389b8b545ad752218ee5c.svg" style="width:24;height:24;transform:rotate(0deg)" alt="arrow"></h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="faq-item">
+                            <h3 class="faq-question">Can I buy second hand cars online at CARS in Delhi NCR ?<img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/240420160214/js/bf6340572e7389b8b545ad752218ee5c.svg" style="width:24;height:24;transform:rotate(0deg)" alt="arrow"></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- FAQ section -->
+    
+<!-- footer section -->
+<footer class="footer set-bg" data-setbg="/static/img/footer-bg.jpg" styl">
+    <div class="container" style="border: none;">
+        <div class="footer__contact">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="footer__contact__title">
+                        <h2>Contact Us Now!</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="footer__contact__option">
+                        <div class="option__item"><i class="fa fa-phone"></i> (+12) 345 678 910</div>
+                        <div class="option__item email"><i class="fa fa-envelope-o"></i> punyapal@gmail.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="footer__about">
+                    <div class="footer__logo">
+                        <a href="#"><img src="../static/img/footer-logo.png" alt=""></a>
+                    </div>
+                    <p>Any questions? Let us know in store at 625 Gloria Union, California, United Stated or call us
+                        on (+1) 96 123 8888</p>
+                    <div class="footer__social">
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google"></i></a>
+                        <a href="#" class="skype"><i class="fa fa-skype"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 offset-lg-1 col-md-3">
+                <div class="footer__widget">
+                    <h5>Infomation</h5>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Purchase</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Payemnt</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Shipping</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Return</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3">
+                <div class="footer__widget">
+                    <h5>Infomation</h5>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Hatchback</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Sedan</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> SUV</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Crossover</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer__brand">
+                    <h5>Top Brand</h5>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Abarth</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Acura</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Alfa Romeo</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Audi</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> BMW</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Chevrolet</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Ferrari</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Honda</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <div class="footer__copyright__text">
+            <!-- <p style="color: white;">Copyright &copy;<script>document.write(new Date().getFullYear());
+            </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true">
+
+            </i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        </p> -->
+        </div>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+
+
+<!-- Bootstrap and jQuery Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- Script for manually closing Bootstrap dropdowns after click -->
+<script>
+    $(document).ready(function(){
+        $('.dropdown-toggle').on('click', function (e) {
+            var $el = $(this);
+            var $parent = $(this).parent();
+            var $openDropdown = $parent.find('.dropdown-menu');
+            // Close all dropdowns except the one clicked
+            $('.dropdown-menu').not($openDropdown).removeClass('show');
+            // Toggle the dropdown clicked
+            $openDropdown.toggleClass('show');
+            // Prevent default link action
+            return false;
+        });
+
+        // Close dropdowns when clicking outside
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.dropdown-toggle').length) {
+                $('.dropdown-menu').removeClass('show');
+            }
+        });
+    });
+</script>
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuTrigger = document.querySelector('.menu-trigger');
+        const mainNav = document.querySelector('.nav');
+        const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+  
+        // Function to toggle the visibility of the main navigation menu
+        function toggleMainNav() {
+            mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
+            // Hide all dropdown menus when toggling the main navigation menu
+            dropdownMenus.forEach(function(dropdownMenu) {
+                dropdownMenu.style.display = 'none';
+            });
+        }
+  
+        // Function to toggle the visibility of dropdown menus
+        function toggleDropdownMenu(dropdownMenu) {
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        }
+  
+        // Event listener for menu trigger button
+        menuTrigger.addEventListener('click', function() {
+            toggleMainNav();
+        });
+  
+        // Event listeners for dropdown toggle buttons
+        const dropdownToggleButtons = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggleButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                const dropdownMenu = this.nextElementSibling;
+                toggleDropdownMenu(dropdownMenu);
+            });
+        });
+    });
+  </script>
+  <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery.slicknav.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/dropdown.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="../static/css/Blog.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css" type="text/css">
+  <link rel="stylesheet" href="../static/css/challan.css" type="text/css">
+  <link rel="stylesheet" href="../static/css/template.1.css" type="text/css">
+    <title>Core value</title>
+    <style>
+        .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 100px; /* Center horizontally */
+      transform: translateX(-50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px !important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center !important;
+    margin-left: 28% !important;
+      
+  }
+        
+         </style>
+                   
+</head>
+<body>
+
+     <!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky" style="background: black;">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <nav class="main-nav">
+                
+                  <a href="/" class="logo" style="color: white;">CAR<em> VALUE</em></a>
+                 
+                  <ul class="nav">
+                      <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Buy a car</a>
+                        
+                          <div class="dropdown-menu">
+                              <a class="dropdown-item" href="{% url 'delhi' %}" style="color: black;">Used car Delhi</a>
+                              <a class="dropdown-item" href="{% url 'mumbai' %}" style="color: black;">Used car Mumbai</a>
+                              <a class="dropdown-item" href="{% url 'banglore' %}" style="color: black;">Used car Bangalore</a>
+                              <a class="dropdown-item" href="{% url 'ahemdabad' %}" style="color: black;">Used car Ahmedabad</a>
+                              <a class="dropdown-item" href="{% url 'surat' %}" style="color: black;">Used car Surat</a>
+                              <!-- <a class="dropdown-item" href="#" style="color: black;">Used car Gujarat</a> -->
+                          </div>
+                      </li>
+
+
+                      <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sell a car</a>
+                        
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'carvaluation' %}" style="color: black;">Used car valuation</a>
+                              
+                          </div>
+                      </li>
+
+
+                      <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Car finance</a>
+                        
+                          <div class="dropdown-menu">
+                              <a class="dropdown-item" href="{% url 'loan' %}" style="color: black;">Used car loan</a>
+                              <!-- <a class="dropdown-item" href="#" style="color: black;">Used car loan eligiblitiy</a> -->
+                              <!-- <a class="dropdown-item" href="#" style="color: black;">Used car loan interest rate</a> -->
+                              <a class="dropdown-item" href="{% url 'emicalculator' %}" style="color: black;">Used car EmI calculator</a>
+                              <!-- <a class="dropdown-item" href="#" style="color: black;">FAQ</a> -->
+                              <!-- <a class="dropdown-item" href="#" style="color: black;">Terms</a> -->
+                          </div>
+                      </li>
+
+
+                      <li><a href="{% url 'blog' %}">Blog</a></li> 
+
+
+                      <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Car Service</a>
+                        
+                          <div class="dropdown-menu">
+                              <a class="dropdown-item" href="{% url 'challan' %}" style="color: black;">View and pay challan</a>
+                              <!-- <a class="dropdown-item" href="{% url 'blog' %}" style="color: black;">Check Vehicle details</a> -->
+                          </div>
+                      </li>
+                      <li><a href="{% url 'signup' %}">Login</a>
+                      </li>
+                      <li><a href="#"></a></li>    
+                  </ul>     
+                  <a class='menu-trigger'>
+                      <span>Menu</span>
+                  </a>
+                 
+              </nav>
+          </div>
+      </div>
+  </div>
+</header> 
+                            <!-- ***** Header Area End ***** -->
+
+
+    <main class="min-h-screen pt-[88px] px-6 sm:px-0">
+        <div class="lg:h-96 relative -z-10"><img alt="hero banner" fetchpriority="high" width="1212" height="542"
+                decoding="async" data-nimg="1" class="w-full h-full lg:min-h-[542px] min-h-[250px] object-cover"
+                style="color:transparent"
+                src="../static/img/slider.jpg">
+        </div>
+        <div
+            class="container mx-auto lg:px-2 px-4 items-center m-auto -mt-40 sm:block md:block lg:block xl:flex lg:max-w-[1140px]">
+            <div class="bg-white drop-shadow-card px-11 py-14 sm:w-full md:w-full lg:w-full xl:w-[69%] rounded">
+                <div class="flex items-center ">
+                    <div class="w-12 h-12 rounded-full relative overflow-hidden"><img alt="Team Cars" loading="lazy"
+                            width="100" height="100" decoding="async" data-nimg="1" style="color:transparent"
+                            src="../static/img/logo-search-grid-1x.png">
+                    </div>
+                    <div class="ml-4"><h6 class="text-sm active:text-orange-500" href="#">Team
+                            Cars</h6></div>
+                </div>
+                <h1 class="text-gray-900  leading-8 my-12 text-2xl xl:text-4xl-large text-primary">
+                        What Are Flex-Fuel Vehicles? Working, Benefits &amp; Drawbacks
+                        Explained</h1>
+                <p class=" leading-6 mt-4 mb-10">The automotive industry is in constant pursuit of finding sustainable
+                    alternatives to petrol and diesel. Electricity as a power source is being put</p><h6
+                    class="text-orange-500 text-sm block mt-4 hover:underline">Read
+                    More</h6>
+            </div>
+        </div>
+        <div class="container mx-auto lg:px-2 px-3 lg:max-w-[1140px]">
+            <div class="pb-10">
+                <div class="flex items-center justify-between mt-20 mb-6">
+                    <h2 class="text-3xl font-bold leading-10">Latest Stories</h2>
+        
+                </div>
+                <div class="sm:block md:block lg:flex xl:flex gap-8">
+                    <div class="xl:w-1/2 xl:mr-8 mb-6"><a href="#">
+                            <div><img alt="Suvs with Best Mileage" loading="lazy" width="270" height="270" decoding="async"
+                                    data-nimg="1" class="min-w-full lg:h-[270px]"
+                                    style="color:transparent;aspect-ratio:auto 265 / 140"
+                                    src="../static/img/logo-search-grid-1x.png">
+                                <div class="mt-6">
+                                    <h1 class="text-gray-900 text-2xl font-extrabold leading-8">Top 10 Suvs with Best
+                                        Mileage in 2024</h1>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">An SUV or a Sports Utility
+                                        Vehicle is much more than the sum of its parts. In addition to the roomy interiors
+                                        and feature rich packages, they are</p>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="grid grid-rows-4 sm:grid-rows-2 grid-flow-col gap-8 xl:w-1/2 md:w-full "><a
+                            href="#">
+                            <div><img alt="Luxury Car Brands" loading="lazy" width="270" height="140" decoding="async"
+                                    data-nimg="1" class="min-w-full lg:h-[140px]"
+                                    style="color:transparent;aspect-ratio:auto 265 / 140"
+                                    src="../static/img/avinya-concept-exterior-left-front-three-quarter.webp">
+                                <div class="mt-6">
+                                    <h1 class="text-gray-900 text-2xl font-extrabold leading-8">Luxury Car Brands in India
+                                        in 2024</h1>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">Luxury cars are more than
+                                        just vehicles in India; they're symbols of status and elegance. They hold a strong
+                                        aspirational value, thus the ownership</p>
+                                </div>
+                            </div>
+                        </a><a href="#">
+                            <div><img alt="Cars Report" loading="lazy" width="270" height="140" decoding="async"
+                                    data-nimg="1" class="min-w-full lg:h-[140px]"
+                                    style="color:transparent;aspect-ratio:auto 265 / 140"
+                                    src="../static/img/lm-exterior-right-front-three-quarter-3.webp">
+                                <div class="mt-6">
+                                    <h1 class="text-gray-900 text-2xl font-extrabold leading-8">Countrywide Craze: SUV Sales
+                                        Jump 40% in Q1'24 , Strongly Reflects India's Quest for Bigger &amp; Better Cars
+                                    </h1>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">2024 has kickstarted with
+                                        a bang, presenting the automotive industry with more reasons to celebrate than ever
+                                        before. Amidst this backdrop of</p>
+                                </div>
+                            </div>
+                        </a><a href="#">
+                            <div><img alt="alto 800 vs alto k10 comparision" loading="lazy" width="270" height="140"
+                                    decoding="async" data-nimg="1" class="min-w-full lg:h-[140px]"
+                                    style="color:transparent;aspect-ratio:auto 265 / 140"
+                                    src="../static/img/tigor-ev-exterior-right-front-three-quarter-2.webp">
+                                <div class="mt-6">
+                                    <h1 class="text-gray-900 text-2xl font-extrabold leading-8">Maruti Alto 800 vs Maruti
+                                        Alto K10 Comparison – Price, Features, Safety &amp; Performance</h1>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">In the world of Indian
+                                        hatchbacks, Maruti Suzuki serves up a delightful duo: the Maruti Alto 800 and the
+                                        Maruti Alto K10. These cars bring their</p>
+                                </div>
+                            </div>
+                        </a><a href="#">
+                            <div><img alt="TATA NEXON EV safety rating" loading="lazy" width="270" height="140"
+                                    decoding="async" data-nimg="1" class="min-w-full lg:h-[140px]"
+                                    style="color:transparent;aspect-ratio:auto 265 / 140"
+                                    src="../static/img/safari-ev-exterior-right-front-three-quarter.webp">
+                                <div class="mt-6">
+                                    <h1 class="text-gray-900 text-2xl font-extrabold leading-8">Tata Nexon EV Safety Rating:
+                                        Adult &amp; Child Protection Score</h1>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">Positioned as one of the
+                                        most affordable electric SUVs in the country, the Tata Nexon EV is the best-selling
+                                        electric car in India and takes on</p>
+                                </div>
+                            </div>
+                        </a></div>
+                </div>
+                
+                <div class="pb-10">
+                    <div class="flex items-center justify-between mt-20">
+                        <h2 class="text-3xl font-bold leading-10 mb-6">Featured</h2>
+                    </div>
+                    <div class="!relative">
+                        <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide swiper-slide-active" style="width: 251px; margin-right: 40px;">
+                                    <div class="max-w-[280px]"><a href="#"><img
+                                                alt="VIP Number Plate Price for Cars" loading="lazy" width="255"
+                                                height="180" decoding="async" data-nimg="1"
+                                                class="min-w-full lg:h-[180px] lg:w-[255px] " style="color:transparent"
+                                                src="../static/img/seal-exterior-right-front-three-quarter-9.webp">
+                                            <div class="mt-6">
+                                                <h3 class="text-gray-900 text-2xl font-extrabold leading-8">VIP Number Plate
+                                                    Price for Cars: Fancy Number Plate</h3>
+                                                <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">A car's
+                                                    registration number is its identity, just like you are known by your
+                                                    name. Registration numbers are issued by the RTO and are mainly randomly
+                                                </p>
+                                            </div>
+                                        </a></div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-next" style="width: 251px; margin-right: 40px;">
+                                    <div class="max-w-[280px]"><a href="#"><img
+                                                alt="Buy used car" loading="lazy" width="255" height="180" decoding="async"
+                                                data-nimg="1" class="min-w-full lg:h-[180px] lg:w-[255px] "
+                                                style="color:transparent"
+                                                src="../static/img/nexon-ev-exterior-right-front-three-quarter-3.webp">
+                                            <div class="mt-6">
+                                                <h3 class="text-gray-900 text-2xl font-extrabold leading-8">10 Benefits of
+                                                    Buying a Used Car</h3>
+                                                <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">The concept of
+                                                    basic needs has been turned on its head due to the tragedy caused by the
+                                                    Covid-19 pandemic. The existing basic needs were shelter,</p>
+                                            </div>
+                                        </a></div>
+                                </div>
+                                <div class="swiper-slide" style="width: 251px; margin-right: 40px;">
+                                    <div class="max-w-[280px]"><a
+                                            href="#"><img
+                                                alt="7 Mistakes to Avoid When Buying A Pre-owned Car" loading="lazy"
+                                                width="255" height="180" decoding="async" data-nimg="1"
+                                                class="min-w-full lg:h-[180px] lg:w-[255px] " style="color:transparent"
+                                                src="../static/img/xuv-3xo-exterior-rear-view-2.webp">
+                                            <div class="mt-6">
+                                                <h3 class="text-gray-900 text-2xl font-extrabold leading-8">7 Mistakes to
+                                                    Avoid When Buying A Pre-owned Car</h3>
+                                                <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">In recent
+                                                    years, the Indian landscape has witnessed a significant shift towards
+                                                    acquiring pre-owned cars. With over 4.4 million used cars sold in</p>
+                                            </div>
+                                        </a></div>
+                                </div>
+                                <div class="swiper-slide" style="width: 251px; margin-right: 40px;">
+                                    <div class="max-w-[280px]"><a
+                                            href="#"><img
+                                                alt="Tips for First Time Car Buyers in India" loading="lazy" width="255"
+                                                height="180" decoding="async" data-nimg="1"
+                                                class="min-w-full lg:h-[180px] lg:w-[255px] " style="color:transparent"
+                                                src="../static/img/innova-crysta-exterior-right-front-three-quarter-2.webp">
+                                            <div class="mt-6">
+                                                <h3 class="text-gray-900 text-2xl font-extrabold leading-8">5 Important Tips
+                                                    for First Time Car Buyers in India!</h3>
+                                                <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">Buying your
+                                                    first car after college or after your first salary can be pretty
+                                                    exciting. Still, it’s essential to understand the know-how of the entire
+                                                </p>
+                                            </div>
+                                        </a></div>
+                                </div>
+                                <div class="swiper-slide" style="width: 251px; margin-right: 40px;">
+                                    <div class="max-w-[280px]"><a href="#"><img
+                                                alt="Best Hyundai Cars in India" loading="lazy" width="255" height="180"
+                                                decoding="async" data-nimg="1" class="min-w-full lg:h-[180px] lg:w-[255px] "
+                                                style="color:transparent"
+                                                src="../static/img/superb-exterior-right-front-three-quarter-6.webp">
+                                            <div class="mt-6">
+                                                <h3 class="text-gray-900 text-2xl font-extrabold leading-8">Best Hyundai
+                                                    Cars in India in 2024 – Price, Mileage, Specifications</h3>
+                                                <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">Welcome to the
+                                                    world of excitement and innovation as we explore the best Hyundai cars
+                                                    in India for 2024. If you're on the hunt for top-notch rides,</p>
+                                            </div>
+                                        </a></div>
+                                </div>
+                                <div class="swiper-slide" style="width: 251px; margin-right: 40px;">
+                                    <div class="max-w-[280px]"><a href="#"><img loading="lazy"
+                                                width="255" height="180" decoding="async" data-nimg="1"
+                                                class="min-w-full lg:h-[180px] lg:w-[255px] " style="color:transparent"
+                                                src="../static/img/wrangler-facelift-exterior-left-front-three-quarter.webp">
+                                            <div class="mt-6">
+                                                <h3 class="text-gray-900 text-2xl font-extrabold leading-8">What Are
+                                                    Flex-Fuel Vehicles? Working, Benefits &amp; Drawbacks Explained</h3>
+                                                <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">The automotive
+                                                    industry is in constant pursuit of finding sustainable alternatives to
+                                                    petrol and diesel. Electricity as a power source is being put</p>
+                                            </div>
+                                        </a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="hidden absolute -left-[96px] -right-[96px] top-[20%] text-white text-3xl justify-between hidden md:flex xl:flex 2xl:flex lg:flex">
+                            <!-- <button
+                                class="w-[48px] h-[48px] mr-1 ml-1 bg-orange-500 p-1  rounded-full flex justify-center items-center arrow-left disabled:bg-[#b9b9b9]"
+                                disabled=""><img alt="left" loading="lazy" width="22" height="22" decoding="async"
+                                    data-nimg="1" style="color:transparent"
+                                    src="https://assets.Cars24.com/production/blog-in/240321071452/_next/static/media/left-arrow.3a96fac3.svg"></button><button
+                                class="w-[48px] h-[48px] ml-1 bg-orange-500 p-1  rounded-full flex justify-center items-center arrow-right disabled:bg-[#b9b9b9]"><img
+                                    alt="right" loading="lazy" width="22" height="22" decoding="async" data-nimg="1"
+                                    style="color:transparent"
+                                    src="https://assets.Cars24.com/production/blog-in/240321071452/_next/static/media/right-arrow.4913257e.svg"></button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-2">
+                <div class="overflow-x-auto sm:overflow-x-hidden flex lg:justify-center ">
+                    <ul class="flex items-center lg:justify-center w-fit mb-3 sm:mb-0">
+                        <li
+                            class="shrink-0 hover:text-white block text-base pl-8 pr-8 p-4 hover:bg-[#0071BC] m-1 rounded-full text-white bg-[#0071BC] border sm:border-0 w-fit">
+                            <button>Advisories</button></li>
+                        <li
+                            class="shrink-0 hover:text-white block text-base pl-8 pr-8 p-4 hover:bg-[#0071BC] m-1 rounded-full text-black cursor-pointer border sm:border-0 w-fit">
+                            <button>Brag Your Ride</button></li>
+                        <li
+                            class="shrink-0 hover:text-white block text-base pl-8 pr-8 p-4 hover:bg-[#0071BC] m-1 rounded-full text-black cursor-pointer border sm:border-0 w-fit">
+                            <button>Car Buying Tips</button></li>
+                        <li
+                            class="shrink-0 hover:text-white block text-base pl-8 pr-8 p-4 hover:bg-[#0071BC] m-1 rounded-full text-black cursor-pointer border sm:border-0 w-fit">
+                            <button>Car Face-Offs</button></li>
+                        <li
+                            class="shrink-0 hover:text-white block text-base pl-8 pr-8 p-4 hover:bg-[#0071BC] m-1 rounded-full text-black cursor-pointer border sm:border-0 w-fit">
+                            <button>Car Finance</button></li>
+                    </ul>
+                </div>
+                <div class="lg:flex md:flex md:justify-between grid grid-col-1"><a href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between"><img
+                                    alt="something" loading="lazy" width="348" height="196" decoding="async" data-nimg="1"
+                                    class="aspect-image w-full h-full md:w-348 md:h-[196px]" style="color:transparent"
+                                    src="../static/img/sierra-ev-exterior-right-front-three-quarter.webp">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">Paytm Fastag - Know How to
+                                        Close Paytm FASTag</h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">With millions of FASTags
+                                        zipping across Indian highways (over 7.6 crore active in September 2023 according to
+                                        NETC statistics), ensuring a smooth</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a><a href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">How to Find Your Car's
+                                        Engine Number, Chassis Number and VIN </h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">Navigating the world of
+                                        vehicles can be a complex yet exciting experience, especially when it comes to
+                                        understanding the intricate details of your</p>
+                                </div><img alt="something" loading="lazy" width="348" height="196" decoding="async"
+                                    data-nimg="1" class="!relative aspect-image w-full h-full md:w-348 md:h-[196px]"
+                                    style="color:transparent"
+                                    src="../static/img/wrangler-facelift-exterior-left-front-three-quarter.webp">
+                            </div>
+                        </div>
+                    </a><a href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between"><img
+                                    alt="something" loading="lazy" width="348" height="196" decoding="async" data-nimg="1"
+                                    class="aspect-image w-full h-full md:w-348 md:h-[196px]" style="color:transparent"
+                                    src="../static/img/nexon-ev-exterior-right-front-three-quarter-3.webp">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">How to Get a Pollution Under
+                                        Control (PUC) Certificate For Your Vehicle</h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">If you own a vehicle in
+                                        India, you've probably heard about the importance of acquiring a Pollution Under
+                                        Control (PUC) Certificate in India. Why is</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="hidden"><a
+                        href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between"><img
+                                    alt="something" loading="lazy" width="348" height="196" decoding="async" data-nimg="1"
+                                    class="aspect-image w-full h-full md:w-348 md:h-[196px]" style="color:transparent"
+                                    src="../static/img/wrangler-facelift-exterior-left-front-three-quarter.webp">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">5 Best Used Cars for
+                                        Performance Modification</h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">Every car enthusiasts love
+                                        to own a customized car or a project car. A mean machine of their own imagination.
+                                        Auto enthusiasts and petrol heads are</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="hidden"><a href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between"><img
+                                    alt="something" loading="lazy" width="348" height="196" decoding="async" data-nimg="1"
+                                    class="aspect-image w-full h-full md:w-348 md:h-[196px]" style="color:transparent"
+                                    src="../static/img/avinya-concept-exterior-left-front-three-quarter.webp">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">Top 10 Suvs with Best
+                                        Mileage in 2024</h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">An SUV or a Sports Utility
+                                        Vehicle is much more than the sum of its parts. In addition to the roomy interiors
+                                        and feature rich packages, they are</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a><a href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">Luxury Car Brands in India
+                                        in 2024</h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">Luxury cars are more than
+                                        just vehicles in India; they're symbols of status and elegance. They hold a strong
+                                        aspirational value, thus the ownership</p>
+                                </div><img alt="something" loading="lazy" width="348" height="196" decoding="async"
+                                    data-nimg="1" class="!relative aspect-image w-full h-full md:w-348 md:h-[196px]"
+                                    style="color:transparent"
+                                    src="../static/img/nexon-ev-exterior-right-front-three-quarter-3.webp">
+                            </div>
+                        </div>
+                    </a><a href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between"><img
+                                    alt="something" loading="lazy" width="348" height="196" decoding="async" data-nimg="1"
+                                    class="aspect-image w-full h-full md:w-348 md:h-[196px]" style="color:transparent"
+                                    src="../static/img/lm-exterior-right-front-three-quarter-3.webp">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">Maruti Alto 800 vs Maruti
+                                        Alto K10 Comparison – Price, Features, Safety &amp; Performance</h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">In the world of Indian
+                                        hatchbacks, Maruti Suzuki serves up a delightful duo: the Maruti Alto 800 and the
+                                        Maruti Alto K10. These cars bring their</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="hidden"><a href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between"><img
+                                    alt="something" loading="lazy" width="348" height="196" decoding="async" data-nimg="1"
+                                    class="aspect-image w-full h-full md:w-348 md:h-[196px]" style="color:transparent"
+                                    src="../static/img/tiago-exterior-right-front-three-quarter-27.webp">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">Maruti Ignis vs Maruti Swift
+                                        Comparison – Price, Features &amp; Specifications</h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">When it comes to the
+                                        Indian automotive industry, best hatchbacks have a stranglehold on sales figures
+                                        that sedans or SUVs just can’t keep up with.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a><a href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">Kia Carens vs Maruti Ertiga
+                                        Comparison - Price, Features &amp; Specifications</h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">With MPVs now getting
+                                        popular and competing against mainstream cars in the country, we have witnessed many
+                                        brands introducing affordable 3-row</p>
+                                </div><img alt="something" loading="lazy" width="348" height="196" decoding="async"
+                                    data-nimg="1" class="!relative aspect-image w-full h-full md:w-348 md:h-[196px]"
+                                    style="color:transparent"
+                                    src="../static/img/innovahycrossinnovahycrossrightsideview.jpeg">
+                            </div>
+                        </div>
+                    </a><a href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between"><img
+                                    alt="something" loading="lazy" width="348" height="196" decoding="async" data-nimg="1"
+                                    class="aspect-image w-full h-full md:w-348 md:h-[196px]" style="color:transparent"
+                                    src="../static/img/wrangler-facelift-exterior-left-front-three-quarter.webp">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">Honda City vs Hyundai Verna
+                                        Comparison - Price, Features &amp; Specifications</h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">When discussing the best
+                                        sedans in India, the Honda City and the Hyundai Verna emerge as two of the oldest
+                                        and longest-running nameplates in the</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="hidden"><a href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between"><img
+                                    alt="something" loading="lazy" width="348" height="196" decoding="async" data-nimg="1"
+                                    class="aspect-image w-full h-full md:w-348 md:h-[196px]" style="color:transparent"
+                                    src="../static/img/tigor-ev-exterior-right-front-three-quarter-2.webp">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">Used Car Loans For
+                                        First-time Buyers - Explained</h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">Congratulations on taking
+                                        the exciting step towards purchasing your first car! A car is not just a fancy way
+                                        to commute, it is the door that opens</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a><a href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">What Is the Most Common Used
+                                        Car Loan Scam? - How to Protect From This Scams</h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">Welcome to our beginner's
+                                        guide on used car loan scams, with a specific focus on the situation in India. In
+                                        today's world, where owning a car is</p>
+                                </div><img alt="something" loading="lazy" width="348" height="196" decoding="async"
+                                    data-nimg="1" class="!relative aspect-image w-full h-full md:w-348 md:h-[196px]"
+                                    style="color:transparent"
+                                    src="./Images/lm-exterior-right-front-three-quarter-3.webp">
+                            </div>
+                        </div>
+                    </a><a href="#">
+                        <div class="p-5 lg:flex-1 max-w-[348px]">
+                            <div class=" border rounded-lg overflow-hidden h-fit-content flex flex-col justify-between"><img
+                                    alt="something" loading="lazy" width="348" height="196" decoding="async" data-nimg="1"
+                                    class="aspect-image w-full h-full md:w-348 md:h-[196px]" style="color:transparent"
+                                    src="./Images/superb-exterior-right-front-three-quarter-6.webp">
+                                <div class="mt-6 px-8 pb-10">
+                                    <h3 class="text-gray-900 text-2xl font-extrabold leading-8">Know The Car Loan Process
+                                        for Used Car in India – A Step By Step Guide</h3>
+                                    <p class="text-1xl font-medium leading-6 mt-4 text-slate-600">The used car market in
+                                        India is expanding—in FY 2021-22, 4.4 million used cars were sold in India, a 15%
+                                        increase from the previous year when 3.8</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                
+            </div>
+            <main class="py-16">
+                <div class="border py-4 xl:py-16 px-5 rounded">
+                    <h3 class="uppercase font-medium leading-10 text-center text-xl xl:text-4xl">MEET OUR EXPERTS</h3>
+                    <div
+                        class="xl:flex lg:flex md:grid sm:grid grid grid-cols-2 gap-y-8 items-center justify-center mt-10 xl:mt-28">
+                        <a class="flex text-center flex-col m-auto" href="#">
+                            <div><img alt="Govindan Kishwar" loading="lazy" width="96" height="96" decoding="async"
+                                    data-nimg="1" class="rounded-full block m-auto" style="color:transparent"
+                                    src="../static/img/testimonial-2.jpg">
+                                <h4 class="text-base font-medium leading-6 mt-4 text-slate-800">Govindan Kishwar</h4>
+                                <p class="text-sm font-medium leading-6 mt-0 text-slate-500">Head of Content</p>
+                            </div>
+                        </a><a class="flex text-center flex-col m-auto" href="#">
+                            <div><img alt="Aeliya Naqvi" loading="lazy" width="96" height="96" decoding="async"
+                                    data-nimg="1" class="rounded-full block m-auto" style="color:transparent"
+                                    src="../static/img/testimonial-1.jpg">
+                                <h4 class="text-base font-medium leading-6 mt-4 text-slate-800">Aeliya Naqvi</h4>
+                                <p class="text-sm font-medium leading-6 mt-0 text-slate-500">Lead Editor</p>
+                            </div>
+                        </a><a class="flex text-center flex-col m-auto" href="#">
+                            <div><img alt="Rahul Jha" loading="lazy" width="96" height="96" decoding="async" data-nimg="1"
+                                    class="rounded-full block m-auto" style="color:transparent"
+                                    src="https://assets.cars24.com/production/blog-in/240321071452/_next/static/media/rahul-jha.658ccbbb.jpg">
+                                <h4 class="text-base font-medium leading-6 mt-4 text-slate-800">Rahul Jha</h4>
+                                <p class="text-sm font-medium leading-6 mt-0 text-slate-500">Senior Writer</p>
+                            </div>
+                        </a><a class="flex text-center flex-col m-auto" href="author/aarshi-ray">
+                            <div><img alt="Aarshi Ray" loading="lazy" width="96" height="96" decoding="async" data-nimg="1"
+                                    class="rounded-full block m-auto" style="color:transparent"
+                                    src="https://assets.Cars24.com/production/blog-in/240321071452/_next/static/media/aarshi-ray.a0c997a9.jpg">
+                                <h4 class="text-base font-medium leading-6 mt-4 text-slate-800">Aarshi Ray</h4>
+                                <p class="text-sm font-medium leading-6 mt-0 text-slate-500">Writer </p>
+                            </div>
+                        </a></div>
+                </div>
+            </main>
+            <main class="pt-10 pb-10">
+                <div class="w-full font-mono text-sm  max-w-screen-2xl m-auto">
+                    <div class="xl:grid lg:grid xl:grid-cols-2 lg:grid-cols-2">
+                        <div class="xl:pr-10 xl:border-r">
+                            <h3 class="text-3xl font-medium leading-10">Sell Used Car</h3>
+                            <div class="w-full xl:w-96">
+                                <p class="text-base font-sm leading-6 mt-4 text-slate-800 mb-6">Carculator gives the most
+                                    honest price for your in car in the market.<!-- --> </p>
+                                <div class="[&amp;>a]:inline-block"><a
+                                        class="text-sm uppercase font-medium py-3 px-4 rounded-lg bg-orange-600 hover:bg-black hover:border hover:text-orange-600 border-orange-600 text-white text-center cursor-pointer h-[44px]"
+                                        href="https://shivamtiwari.streamlit.app/">EVALUATE CAR PRICE</a></div>
+                            </div>
+                            <div class="flex justify-end mt-4 xl:-mt-16"><img alt="used car" loading="lazy" width="370"
+                                    height="505" decoding="async" data-nimg="1" class="block" style="color:transparent"
+                                    src="https://assets.Cars24.com/production/blog-in/240321071452/_next/static/media/user-car-image.343c1490.png">
+                            </div>
+                        </div>
+                        <div class="xl:pl-10 xl:mt-0 mt-20 flex items-center flex-col">
+                            <h3 class="text-3xl font-medium leading-10">Why Choose Cars?</h3>
+                            <div class="grid grid-rows-2 grid-cols-2 justify-evenly w-90 sm:w-96 mt-10">
+                                <div class="flex justify-center items-center flex-col mb-14"><img
+                                        alt="Sell Car in One Visit" loading="lazy" width="143" height="146" decoding="async"
+                                        data-nimg="1" style="color:transparent"
+                                        src="https://assets.cars24.com/production/blog-in/240321071452/_next/static/media/visit.54422376.png">
+                                    <h4 class="text-base font-medium leading-6 mt-4 text-slate-800">Sell Car in One Visit
+                                    </h4>
+                                </div>
+                                <div class="flex justify-center items-center flex-col mb-14"><img alt="Best Car Price"
+                                        loading="lazy" width="143" height="146" decoding="async" data-nimg="1"
+                                        style="color:transparent"
+                                        src="https://assets.Cars24.com/production/blog-in/240321071452/_next/static/media/price.42f3bb95.png">
+                                    <h4 class="text-base font-medium leading-6 mt-4 text-slate-800">Best Car Price</h4>
+                                </div>
+                                <div class="flex justify-center items-center flex-col mb-14"><img alt="Instant Payment"
+                                        loading="lazy" width="143" height="143" decoding="async" data-nimg="1"
+                                        style="color:transparent"
+                                        src="https://assets.Cars24.com/production/blog-in/240321071452/_next/static/media/payment.0b1203e2.png">
+                                    <h4 class="text-base font-medium leading-6 mt-4 text-slate-800">Instant Payment</h4>
+                                </div>
+                                <div class="flex justify-center items-center flex-col mb-14"><img alt="Free RC Transfer"
+                                        loading="lazy" width="143" height="146" decoding="async" data-nimg="1"
+                                        style="color:transparent"
+                                        src="https://assets.Cars24.com/production/blog-in/240321071452/_next/static/media/transfer.04322696.png">
+                                    <h4 class="text-base font-medium leading-6 mt-4 text-slate-800">Free RC Transfer</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+
+<!-- footer section -->
+<!-- Footer Section Begin -->
+<footer class="footer set-bg" data-setbg="/static/img/footer-bg.jpg" styl">
+    <div class="container" style="border: none;">
+        <div class="footer__contact">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="footer__contact__title">
+                        <h2>Contact Us Now!</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="footer__contact__option">
+                        <div class="option__item"><i class="fa fa-phone"></i> (+12) 345 678 910</div>
+                        <div class="option__item email"><i class="fa fa-envelope-o"></i> punyapal@gmail.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="footer__about">
+                    <div class="footer__logo">
+                        <a href="#"><img src="../static/img/footer-logo.png" alt=""></a>
+                    </div>
+                    <p>Any questions? Let us know in store at 625 Gloria Union, California, United Stated or call us
+                        on (+1) 96 123 8888</p>
+                    <div class="footer__social">
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google"></i></a>
+                        <a href="#" class="skype"><i class="fa fa-skype"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 offset-lg-1 col-md-3">
+                <div class="footer__widget">
+                    <h5>Infomation</h5>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Purchase</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Payemnt</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Shipping</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Return</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3">
+                <div class="footer__widget">
+                    <h5>Infomation</h5>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Hatchback</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Sedan</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> SUV</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Crossover</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer__brand">
+                    <h5>Top Brand</h5>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Abarth</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Acura</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Alfa Romeo</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Audi</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> BMW</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Chevrolet</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Ferrari</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Honda</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <div class="footer__copyright__text">
+            <!-- <p>Copyright &copy;<script>document.write(new Date().getFullYear());
+            </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true">
+
+            </i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        </p> -->
+        </div>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+
+    </main>
+
+
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery.slicknav.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/dropdown.js"></script>
+
+
+
+<!-- Bootstrap and jQuery Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- Script for manually closing Bootstrap dropdowns after click -->
+<script>
+    $(document).ready(function(){
+        $('.dropdown-toggle').on('click', function (e) {
+            var $el = $(this);
+            var $parent = $(this).parent();
+            var $openDropdown = $parent.find('.dropdown-menu');
+            // Close all dropdowns except the one clicked
+            $('.dropdown-menu').not($openDropdown).removeClass('show');
+            // Toggle the dropdown clicked
+            $openDropdown.toggleClass('show');
+            // Prevent default link action
+            return false;
+        });
+
+        // Close dropdowns when clicking outside
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.dropdown-toggle').length) {
+                $('.dropdown-menu').removeClass('show');
+            }
+        });
+    });
+</script>
+
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuTrigger = document.querySelector('.menu-trigger');
+        const mainNav = document.querySelector('.nav');
+        const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+  
+        // Function to toggle the visibility of the main navigation menu
+        function toggleMainNav() {
+            mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
+            // Hide all dropdown menus when toggling the main navigation menu
+            dropdownMenus.forEach(function(dropdownMenu) {
+                dropdownMenu.style.display = 'none';
+            });
+        }
+  
+        // Function to toggle the visibility of dropdown menus
+        function toggleDropdownMenu(dropdownMenu) {
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        }
+  
+        // Event listener for menu trigger button
+        menuTrigger.addEventListener('click', function() {
+            toggleMainNav();
+        });
+  
+        // Event listeners for dropdown toggle buttons
+        const dropdownToggleButtons = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggleButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                const dropdownMenu = this.nextElementSibling;
+                toggleDropdownMenu(dropdownMenu);
+            });
+        });
+    });
+  </script>
+
+
+   
+    
+</body>
+</html>

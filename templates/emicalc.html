@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/template.1.css" type="text/css">
+
+
+    <style>
+        .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 100px; /* Center horizontally */
+      transform: translateX(-50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px !important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center !important;
+    margin-left: 28% !important;
+      
+  }
+        
+ </style>
+                   
+</head>
+
+
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky" style="background: black;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo" style="color: white;">CAR<em> VALUE</em></a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Buy a car</a>
+                              
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'delhi' %}" style="color: black;">Used car Delhi</a>
+                                    <a class="dropdown-item" href="{% url 'mumbai' %}" style="color: black;">Used car Mumbai</a>
+                                    <a class="dropdown-item" href="{% url 'banglore' %}" style="color: black;">Used car Bangalore</a>
+                                    <a class="dropdown-item" href="{% url 'ahemdabad' %}" style="color: black;">Used car Ahmedabad</a>
+                                    <a class="dropdown-item" href="{% url 'surat' %}" style="color: black;">Used car Surat</a>
+                                    <!-- <a class="dropdown-item" href="#" style="color: black;">Used car Gujarat</a> -->
+                                </div>
+                            </li>
+
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sell a car</a>
+                              
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'carvaluation' %}" style="color: black;">Used car valuation</a>
+                                    
+                                </div>
+                            </li>
+
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Car finance</a>
+                              
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'loan' %}" style="color: black;">Used car loan</a>
+                                    <!-- <a class="dropdown-item" href="#" style="color: black;">Used car loan eligiblitiy</a> -->
+                                    <!-- <a class="dropdown-item" href="#" style="color: black;">Used car loan interest rate</a> -->
+                                    <a class="dropdown-item" href="{% url 'emicalculator' %}" style="color: black;">Used car EmI calculator</a>
+                                    <!-- <a class="dropdown-item" href="#" style="color: black;">FAQ</a> -->
+                                    <!-- <a class="dropdown-item" href="#" style="color: black;">Terms</a> -->
+                                </div>
+                            </li>
+
+
+                            <li><a href="{% url 'blog' %}">Blog</a></li> 
+
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Car Service</a>
+                              
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'challan' %}" style="color: black;">View and pay challan</a>
+                                    <!-- <a class="dropdown-item" href="{% url 'blog' %}" style="color: black;">Check Vehicle details</a> -->
+                                </div>
+                            </li>
+                            <li><a href="{% url 'signup' %}">Login</a>
+                            </li>
+                            <li><a href="#"></a></li>    
+                        </ul>       
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+<body class="bg-gray-100 p-8 sm:p-16" style="padding-top: 100px;">
+    <!-- EMI calculator explanation section -->
+    <div class="container mx-auto">
+        <div class="bg-gray-800 text-white p-8">
+            <div class="max-w-6xl mx-auto">
+                <h1 class="text-3xl font-bold mb-4">
+                    What is <span class="text-orange-500">EMI calculator?</span>
+                </h1>
+                <p class="text-lg">
+                    Want to buy a pre-owned car but unsure of how it's going to affect your budget? The loan
+                    EMI calculator is a convenient, automated tool that simplifies your pre-owned car loan planning.
+                    Simply input your loan amount (principal amount) and down payment, select the tenure and interest
+                    rate, and discover your monthly loan installments.
+                </p>
+                <p class="mt-4">
+                    Use the  EMI calculator and plan your pre-owned car installment with ease!
+                </p>
+            </div>
+        </div>
+
+        <!-- Loan Calculator section -->
+        <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div>
+                    <div class="mb-6">
+                        <label for="loanAmount" class="block text-gray-800 text-sm font-bold mb-2">Loan amount</label>
+                        <input type="range" id="loanAmount" name="loanAmount" min="70000" max="2000000" value="600000"
+                            class="slider w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
+                        <div class="flex justify-between text-xs px-2">
+                            <span>₹70,000</span>
+                            <span>₹20,00,000</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="tenure" class="block text-gray-800 text-sm font-bold mb-2">Tenure</label>
+                        <input type="range" id="tenure" name="tenure" min="12" max="72" value="72"
+                            class="slider w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
+                        <div class="flex justify-between text-xs px-2">
+                            <span>12 months</span>
+                            <span>72 months</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="interestRate" class="block text-gray-800 text-sm font-bold mb-2">Interest rate</label>
+                        <input type="range" id="interestRate" name="interestRate" min="12" max="20" value="12"
+                            class="slider w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
+                        <div class="flex justify-between text-xs px-2">
+                            <span>12%</span>
+                            <span>20%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="text-center mb-6">
+                        <div class="text-3xl font-bold text-orange-500" id="emi">₹11,730/month</div>
+                        <div class="text-lg text-gray-800">Indicative EMI</div>
+                    </div>
+
+                    <div class="relative mb-6">
+                        <svg class="transform -rotate-90 w-32 h-32 mx-auto">
+                            <circle cx="64" cy="64" r="58" stroke="#f3f4f6" stroke-width="12" fill="none" />
+                            <circle cx="64" cy="64" r="58" stroke="#f59e0b" stroke-width="12" fill="none" stroke-dasharray="364.424"
+                                stroke-dashoffset="182.212" id="emiCircle"></circle>
+                        </svg>
+                    </div>
+
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-800">Loan amount</span>
+                            <span class="font-bold" id="totalLoan">₹6,00,000</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-800">Interest @12% p.a.</span>
+                            <span class="font-bold" id="totalInterest">₹2,44,560</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-800">Total amount</span>
+                            <span class="font-bold" id="totalAmount">₹8,44,560</span>
+                        </div>
+                    </div>
+
+                    <button class="mt-6 w-full bg-gray-800 text-white font-bold py-2 px-4 rounded hover:bg-gray-900"><a href="https://loan-2.onrender.com">
+                        CHECK ELIGIBILITY IN 2 MIN
+                    </a></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white">
+            <div class="max-w-4xl mx-auto p-6">
+                <h1 class="text-3xl font-bold mb-6">How to use the EMI calculator?</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <ul class="space-y-4">
+                            <li class="bg-white dark:bg-zinc-700 shadow-lg rounded-lg p-4 flex items-start">
+                                <span class="text-blue-500 font-bold text-xl mr-4">1</span>
+                                <div>
+                                    <h2 class="font-semibold">Loan amount</h2>
+                                    <p>
+                                        Choose the amount you plan to borrow for your used car purchase. This is the
+                                        principal amount you need to finance your vehicle.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="bg-white dark:bg-zinc-700 shadow-lg rounded-lg p-4 flex items-start">
+                                <span class="text-blue-500 font-bold text-xl mr-4">2</span>
+                                <div>
+                                    <h2 class="font-semibold">Down payment</h2>
+                                    <p>
+                                        This is the amount you pay upfront while purchasing the car and it reduces the
+                                        principal amount of a car loan, lowering monthly payments.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="bg-white dark:bg-zinc-700 shadow-lg rounded-lg p-4 flex items-start">
+                                <span class="text-blue-500 font-bold text-xl mr-4">3</span>
+                                <div>
+                                    <h2 class="font-semibold">Loan tenure</h2>
+                                    <p>
+                                        Select the loan tenure or the number of months you want to take to repay the loan.
+                                        The EMI calculator will instantly display your estimated monthly installment.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="bg-white dark:bg-zinc-700 shadow-lg rounded-lg p-4 flex items-start">
+                                <span class="text-blue-500 font-bold text-xl mr-4">4</span>
+                                <div>
+                                    <h2 class="font-semibold">Interest rate</h2>
+                                    <p>
+                                        Provide the applicable interest rate on your used car loan. This rate may vary
+                                        depending on your credit score and the lender's policies.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/0ead8397628c0d48dbfdad7280487227.png" alt="Calculator Illustration" class="max-w-xs" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white text-zinc-800 p-6">
+            <h2 class="text-3xl font-bold text-center mb-6">Why choose Us?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="flex flex-col items-center p-4">
+                  <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/9cf8c86467e2ed0be5a8a43bd6871838.png" alt="Finance it your way" />
+                  <h3 class="mt-4 mb-2 font-semibold">Finance it your way!</h3>
+                  <p>
+                    Customise EMIs with as low as zero down payment and up to 6 year loan tenure starting at 12%
+                    ROI
+                  </p>
+                </div>
+                <div class="flex flex-col items-center p-4">
+                  <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/c95e712ff0f57064d6c76b3217a32d27.png" alt="Loan offer in minutes" />
+                  <h3 class="mt-4 mb-2 font-semibold">Loan offer in minutes</h3>
+                  <p>Check your eligibility and get a loan offer within 2 minutes with minimal documentation</p>
+                </div>
+                <div class="flex flex-col items-center p-4">
+                  <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/6a34113740e4608cadee18d2d74fcca7.png" alt="Pan India financing" />
+                  <h3 class="mt-4 mb-2 font-semibold">Pan India financing</h3>
+                  <p>Coverage across all major Indian cities with 15,000+ serviceable PIN codes</p>
+                </div>
+                <div class="flex flex-col items-center p-4">
+                  <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/250e1407cf260b9b909389ce4ee080e3.png" alt="Loans for any car" />
+                  <h3 class="mt-4 mb-2 font-semibold">Loans for any car</h3>
+                  <p>Get a loan for pre-owned cars up to 14 years of age</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="container mx-auto">
+              <div class="bg-white p-6">
+                  <h2 class="text-2xl font-semibold mb-6 text-center">Eligibility criteria and documents required</h2>
+                  <div class="flex flex-col sm:flex-row sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                      <div class="bg-white shadow-lg rounded-lg p-4 max-w-sm flex items-center flex-col">
+                          <div class="flex items-center justify-center h-20 w-20 bg-orange-100 rounded-full mb-4">
+                              <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/6fff567615f5f97c0a2d5c2744e1333c.svg" alt="Profile Icon" />
+                          </div>
+                          <h3 class="text-lg font-semibold">Profile</h3>
+                          <p class="text-sm text-zinc-600">Indian nationals aged between 21–65 years</p>
+                      </div>
+                      <div class="bg-white shadow-lg rounded-lg p-4 max-w-sm flex items-center flex-col">
+                          <div class="flex items-center justify-center h-20 w-20 bg-orange-100 rounded-full mb-4">
+                              <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/46d31e400d18020077ab56da4afd716f.svg" alt="Documents Icon" />
+                          </div>
+                          <h3 class="text-lg font-semibold">Documents</h3>
+                          <p class="text-sm text-zinc-600">Aadhaar/Passport/Voter ID, PAN and bank statement</p>
+                      </div>
+                      <div class="bg-white shadow-lg rounded-lg p-4 max-w-sm flex items-center flex-col">
+                          <div class="flex items-center justify-center h-20 w-20 bg-orange-100 rounded-full mb-4">
+                              <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/c3f78f700e58df51e208dcde4e15576a.svg" alt="Employment Icon" />
+                          </div>
+                          <h3 class="text-lg font-semibold">Employment</h3>
+                          <p class="text-sm text-zinc-600">Salaried/Self-employed Monthly income >₹15,000</p>
+                      </div>
+                      <div class="bg-white shadow-lg rounded-lg p-4 max-w-sm flex items-center flex-col">
+                          <div class="flex items-center justify-center h-20 w-20 bg-orange-100 rounded-full mb-4">
+                              <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/4f80ee440a59808725f0eeb2460bb403.svg" alt="CIBIL Score Icon" />
+                          </div>
+                          <h3 class="text-lg font-semibold">CIBIL Score</h3>
+                          <p class="text-sm text-zinc-600">Greater than 650 is recommended</p>
+                      </div>
+                  </div>
+                  <div class="text-center mt-6">
+                      <button class="bg-orange-500 text-white font-bold py-2 px-4 rounded-lg">KNOW MORE</button>
+                  </div>
+              </div>
+          </div>
+          
+            
+
+
+          <div class="container mx-auto">
+            <div class="bg-navy-300 dark:bg-navy-800 p-8">
+                <h2 class="text-center text-2xl font-semibold mb-6">Understand our 6-step loan process</h2>
+                <div class="flex flex-col sm:flex-row items-center sm:justify-between px-4">
+                    <div class="flex flex-col items-center mb-4 sm:mb-0">
+                        <div class="w-10 h-10 bg-black dark:bg-black rounded-full flex items-center justify-center text-white font-bold mb-2">1</div>
+                        <div class="p-4 bg-zinc-200 dark:bg-zinc-700 rounded-lg shadow text-center">
+                            <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/a05ca1aa5328121f0f86e77ed4acef15.svg" alt="Share basic details" />
+                            <p class="text-black text-sm mt-2">Share basic details</p>
+                        </div>
+                    </div>
+                    <div class="flex-auto border-t-2 border-zinc-300 dark:border-zinc-600"></div>
+                    <div class="flex flex-col items-center mb-4 sm:mb-0">
+                        <div class="w-10 h-10 bg-black dark:bg-black rounded-full flex items-center justify-center text-white font-bold mb-2">2</div>
+                        <div class="p-4 bg-zinc-200 dark:bg-zinc-700 rounded-lg shadow text-center">
+                            <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/7a090f5fe168575d4ef4da1a2d3bcc88.svg" alt="Book a car you love" />
+                            <p class="text-black text-sm mt-2">Book a car you love</p>
+                        </div>
+                    </div>
+                    <div class="flex-auto border-t-2 border-zinc-300 dark:border-zinc-600"></div>
+                    <div class="flex flex-col items-center mb-4 sm:mb-0">
+                        <div class="w-10 h-10 bg-black dark:bg-black rounded-full flex items-center justify-center text-white font-bold mb-2">3</div>
+                        <div class="p-4 bg-zinc-200 dark:bg-zinc-700 rounded-lg shadow text-center">
+                            <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/d590a74365b31892351d953d4a5d8871.svg" alt="Share bank statement" />
+                            <p class="text-black text-sm mt-2">Share bank statement</p>
+                        </div>
+                    </div>
+                    <div class="flex-auto border-t-2 border-zinc-300 dark:border-zinc-600"></div>
+                    <div class="flex flex-col items-center mb-4 sm:mb-0">
+                        <div class="w-10 h-10 bg-black dark:bg-black rounded-full flex items-center justify-center text-white font-bold mb-2">4</div>
+                        <div class="p-4 bg-zinc-200 dark:bg-zinc-700 rounded-lg shadow text-center">
+                            <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/b80d0a2a54af50d673f55a812c3473c8.svg" alt="Customise your EMI" />
+                            <p class="text-black text-sm mt-2">Customise your EMI</p>
+                        </div>
+                    </div>
+                    <div class="flex-auto border-t-2 border-zinc-300 dark:border-zinc-600"></div>
+                    <div class="flex flex-col items-center mb-4 sm:mb-0">
+                        <div class="w-10 h-10 bg-black dark:bg-black rounded-full flex items-center justify-center text-white font-bold mb-2">5</div>
+                        <div class="p-4 bg-zinc-200 dark:bg-zinc-700 rounded-lg shadow text-center">
+                            <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/9b827496bd2db74017b4e0689073eaa5.svg" alt="Verify address and KYC" />
+                            <p class="text-black text-sm mt-2">Verify address and KYC</p>
+                        </div>
+                    </div>
+                    <div class="flex-auto border-t-2 border-zinc-300 dark:border-zinc-600"></div>
+                    <div class="flex flex-col items-center mb-4 sm:mb-0">
+                        <div class="w-10 h-10 bg-black dark:bg-black rounded-full flex items-center justify-center text-white font-bold mb-2">6</div>
+                        <div class="p-4 bg-zinc-200 dark:bg-zinc-700 rounded-lg shadow text-center">
+                            <img src="https://assets.cars24.com/production/c2b-website/240426153521/js/b2ed4195c4c67daa6c03782bb174a9e5.svg" alt="E-sign loan agreement" />
+                            <p class="text-black text-sm mt-2">E-sign loan agreement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer set-bg" style="background-image: url('../static/img/footer-bg.jpg');">
+          <div class="container">
+              <div class="footer__contact">
+                  <div class="row">
+                      <div class="col-lg-6 col-md-6">
+                          <div class="footer__contact__title">
+                              <h2>Contact Us Now!</h2>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6">
+                          <div class="footer__contact__option">
+                              <div class="option__item"><i class="fa fa-phone"></i> (+12) 345 678 910</div>
+                              <div class="option__item email"><i class="fa fa-envelope-o"></i> punyapal@gmail.com</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                      <div class="footer__about">
+                          <div class="footer__logo">
+                              <a href="#"><img src="../img/footer-logo.png" alt=""></a>
+                          </div>
+                          <p>Any questions? Let us know in store at 625 Gloria Union, California, United Stated or call us
+                              on (+1) 96 123 8888</p>
+                          <div class="footer__social">
+                              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                              <a href="#" class="google"><i class="fa fa-google"></i></a>
+                              <a href="#" class="skype"><i class="fa fa-skype"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-2 offset-lg-1 col-md-3">
+                      <div class="footer__widget">
+                          <h5>Infomation</h5>
+                          <ul>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Purchase</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Payemnt</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Shipping</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Return</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-3">
+                      <div class="footer__widget">
+                          <h5>Infomation</h5>
+                          <ul>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Hatchback</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Sedan</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> SUV</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Crossover</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="footer__brand">
+                          <h5>Top Brand</h5>
+                          <ul>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Abarth</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Acura</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Alfa Romeo</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Audi</a></li>
+                          </ul>
+                          <ul>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> BMW</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Chevrolet</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Ferrari</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i> Honda</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              <div class="footer__copyright__text">
+                  <!-- <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p> -->
+              </div>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </div>
+      </footer>  
+          
+    </div>
+
+    
+<!-- Bootstrap and jQuery Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- Script for manually closing Bootstrap dropdowns after click -->
+<script>
+    $(document).ready(function(){
+        $('.dropdown-toggle').on('click', function (e) {
+            var $el = $(this);
+            var $parent = $(this).parent();
+            var $openDropdown = $parent.find('.dropdown-menu');
+            // Close all dropdowns except the one clicked
+            $('.dropdown-menu').not($openDropdown).removeClass('show');
+            // Toggle the dropdown clicked
+            $openDropdown.toggleClass('show');
+            // Prevent default link action
+            return false;
+        });
+
+        // Close dropdowns when clicking outside
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.dropdown-toggle').length) {
+                $('.dropdown-menu').removeClass('show');
+            }
+        });
+    });
+</script>
+
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const loanAmount = document.getElementById('loanAmount');
+        const tenure = document.getElementById('tenure');
+        const interestRate = document.getElementById('interestRate');
+        const emi = document.getElementById('emi');
+        const totalLoan = document.getElementById('totalLoan');
+        const totalInterest = document.getElementById('totalInterest');
+        const totalAmount = document.getElementById('totalAmount');
+        const emiCircle = document.getElementById('emiCircle');
+
+        function calculateEMI() {
+            const P = parseInt(loanAmount.value);
+            const r = parseInt(interestRate.value) / 1200;
+            const n = parseInt(tenure.value);
+            const EMI = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+            const totalInterestVal = EMI * n - P;
+            const totalAmountVal = P + totalInterestVal;
+
+            emi.textContent = `₹${Math.round(EMI)}/month`;
+            totalLoan.textContent = `₹${P.toLocaleString()}`;
+            totalInterest.textContent = `₹${Math.round(totalInterestVal).toLocaleString()}`;
+            totalAmount.textContent = `₹${Math.round(totalAmountVal).toLocaleString()}`;
+
+            const circlePercentage = (EMI / 2000) * 364.424; // Assume max EMI is ₹2000 for full circle
+            emiCircle.style.strokeDashoffset = 364.424 - circlePercentage;
+        }
+
+        loanAmount.addEventListener('input', calculateEMI);
+        tenure.addEventListener('input', calculateEMI);
+        interestRate.addEventListener('input', calculateEMI);
+
+        calculateEMI(); // Initial calculation
+    </script>
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuTrigger = document.querySelector('.menu-trigger');
+        const mainNav = document.querySelector('.nav');
+        const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+  
+        // Function to toggle the visibility of the main navigation menu
+        function toggleMainNav() {
+            mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
+            // Hide all dropdown menus when toggling the main navigation menu
+            dropdownMenus.forEach(function(dropdownMenu) {
+                dropdownMenu.style.display = 'none';
+            });
+        }
+  
+        // Function to toggle the visibility of dropdown menus
+        function toggleDropdownMenu(dropdownMenu) {
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        }
+  
+        // Event listener for menu trigger button
+        menuTrigger.addEventListener('click', function() {
+            toggleMainNav();
+        });
+  
+        // Event listeners for dropdown toggle buttons
+        const dropdownToggleButtons = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggleButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                const dropdownMenu = this.nextElementSibling;
+                toggleDropdownMenu(dropdownMenu);
+            });
+        });
+    });
+  </script>
+   <script src="../static/js/dropdown.js"></script>
+</body>
+
+</html>

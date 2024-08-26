@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy a car</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<link rel="stylesheet" href="../static/css/delhi.css">
+
+<link rel="stylesheet" href="../static/css/Blog.css">
+<link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="../static/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="../static/css/owl.carousel.min.css" type="text/css">
+<link rel="stylesheet" href="../static/css/challan.css" type="text/css">
+<link rel="stylesheet" href="../static/css/template.1.css" type="text/css">
+
+<style>
+   .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 100px; /* Center horizontally */
+      transform: translateX(-50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px !important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center !important;
+    margin-left: 50% !important;
+      
+  }
+  
+   </style>
+             
+
+<!-- script -->
+
+<script>
+    // Function to filter cars based on search input
+    function filterCars() {
+      // Get the input value
+      var input = document.getElementById('searchInput').value.toUpperCase();
+      // Get the car boxes
+      var carBoxes = document.getElementsByClassName('car-box');
+      
+      // Loop through all car boxes
+      for (var i = 0; i < carBoxes.length; i++) {
+        var carTitle = carBoxes[i].getElementsByClassName('car-title')[0];
+        var title = carTitle.textContent || carTitle.innerText;
+        
+        // If the title of the car matches the search input, display it, otherwise hide it
+        if (title.toUpperCase().indexOf(input) > -1) {
+          carBoxes[i].style.display = "";
+        } else {
+          carBoxes[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+<!-- end script -->
+<!-- clear script -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.getElementById('searchInput');
+        const clearButton = document.querySelector('.clear');
+    
+        // Function to clear search input and reload the page
+        function clearAll() {
+            searchInput.value = ''; // Clear search input
+            window.location.reload(); // Reload the page
+        }
+    
+        // Event listener for clear button click
+        clearButton.addEventListener('click', clearAll);
+    
+        // Function to filter cars (replace this with your actual filtering function)
+        function filterCars() {
+            // Your filtering logic goes here
+            console.log('Filtering cars...');
+        }
+    });
+    </script>
+
+<!-- clear end -->
+
+
+
+</head>
+<body>
+
+<!--  -->
+ <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky" style="background: black;">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <nav class="main-nav">
+                
+                  <a href="/" class="logo" style="color: white;">CAR<em> VALUE</em></a>
+                 
+                  <ul class="nav">
+                      <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Buy a car</a>
+                        
+                          <div class="dropdown-menu">
+                              <a class="dropdown-item" href="{% url 'delhi' %}" style="color: black;">Used car Delhi</a>
+                              <a class="dropdown-item" href="{% url 'mumbai' %}" style="color: black;">Used car Mumbai</a>
+                              <a class="dropdown-item" href="{% url 'banglore' %}" style="color: black;">Used car Bangalore</a>
+                              <a class="dropdown-item" href="{% url 'ahemdabad' %}" style="color: black;">Used car Ahmedabad</a>
+                              <a class="dropdown-item" href="{% url 'surat' %}" style="color: black;">Used car Surat</a>
+                             
+                          </div>
+                      </li>
+
+
+                      <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sell a car</a>
+                        
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'carvaluation' %}" style="color: black;">Used car valuation</a>
+                              
+                          </div>
+                      </li>
+
+
+                      <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Car finance</a>
+                        
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'loan' %}" style="color: black;">Used car loan</a>
+                            <!-- <a class="dropdown-item" href="#" style="color: black;">Used car loan eligiblitiy</a> -->
+                            <!-- <a class="dropdown-item" href="#" style="color: black;">Used car loan interest rate</a> -->
+                            <a class="dropdown-item" href="{% url 'emicalculator' %}" style="color: black;">Used car EmI calculator</a>
+                            <!-- <a class="dropdown-item" href="#" style="color: black;">FAQ</a> -->
+                            <!-- <a class="dropdown-item" href="#" style="color: black;">Terms</a> -->
+                          </div>
+                      </li>
+
+
+                      <li><a href="{% url 'blog' %}">Blog</a></li> 
+
+
+                      <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Car Service</a>
+                        
+                          <div class="dropdown-menu">
+                              <a class="dropdown-item" href="{% url 'challan' %}" style="color: black;">View and pay challan</a>
+                              <a class="dropdown-item" href="{% url 'blog' %}" style="color: black;">Check Vehicle details</a>
+                          </div>
+                      </li>
+                      <li><a href="{% url 'signup' %}">Login</a>
+                      </li>
+                      <li><a href="#"></a></li>    
+                  </ul>       
+                  <a class='menu-trigger'>
+                      <span>Menu</span>
+                  </a>
+                 
+              </nav>
+          </div>
+      </div>
+  </div>
+</header> 
+<!-- ***** Header Area End ***** -->
+
+
+<!-- car buy start -->
+<div class="container">
+  <section class="car-section" >
+    <div class="car-search">
+        <div class="search-input">
+            <input id="searchInput" type="text" placeholder="Search for your favorite cars" class="form-control" onkeyup="filterCars()">
+
+            
+        </div>
+        <div class="btn">
+            <button class="clear"> Clear All</button>
+            
+        </div>
+    </div>
+
+    <div class="mb-3 ">
+      <div class="Htext">
+          <p style="font-size: initial;">Choose from 1027 used cars in Mumbai available at affordable prices on our car website. Some of the most popular brands for second-hand cars in Delhi NCR are:
+          Maruti (354 cars available)Hyundai (239 cars available)Honda (144 cars available)Tata (81 cars available)Renault (41 cars available)</p>
+          
+      </div>
+  
+  </div>
+</section>
+<!-- end -->
+<div class="heading">
+  <h1>Used cars in <span style="color: orangered;">Surat</span></h1>
+</div>
+
+  <div class="row">
+      <div class="col-lg-4 ">
+          <!-- Column 1 Content -->
+          <div class="car-box" data-value="2019 Honda City">
+            <div class="car-image">
+                <img src="https://imgd.aeplcdn.com/1280x720/cw/specialVersions/6081.jpg?v=20190110011828&q=80" alt="Car Image">
+            </div>
+            <div class="car-details">
+                <div class="year">2018</div>
+                <h3 class="car-title">2019 Honda City</h3>
+                <ul class="car-specs">
+                    <li><span>80,000</span> mi</li>
+                    <li>Auto</li>
+                    <li><span>1100</span> hp</li>
+                </ul>
+                <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                                <div class="price">$25,000</div>
+            </div>
+        </div>
+        
+      <div class="car-box">
+        <div class="car-image">
+            <img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/32943/yaris-exterior-right-front-three-quarter-2.jpeg?q=80" alt="Car Image">
+        </div>
+        <div class="car-details">
+            <div class="year">2020</div>
+            <h3 class="car-title">2020 Toyota YARIS G </h3>
+            <ul class="car-specs">
+                <li><span>90,000</span> mi</li>
+                <li>Auto</li>
+                <li><span>1500</span> hp</li>
+            </ul>
+            <button class="buy-button">Buy Now</button>
+            <div class="price">$60,000</div>
+        </div>
+    </div>
+
+    <div class="car-box">
+        <div class="car-image">
+            <img src="https://imgd.aeplcdn.com/1056x594/n/1thnqbb_1693419.jpg?q=80" alt="Car Image">
+        </div>
+        <div class="car-details">
+            <div class="year">2021</div>
+            <h3 class="car-title">2021 Tata Safari XZ PLUS</h3>
+            <ul class="car-specs">
+                <li><span>80,000</span> mi</li>
+                <li>Auto</li>
+                <li><span>1800</span> hp</li>
+            </ul>
+            <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                        <div class="price">$112,000</div>
+        </div>
+    </div>
+    
+    <div class="car-box">
+        <div class="car-image">
+            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202004/Mahindra_Scorpio_BS6_Napoli_Bl.jpeg?size=690:388" alt="Car Image">
+        </div>
+        <div class="car-details">
+            <div class="year">2021</div>
+            <h3 class="car-title">2021 Mahindra Scorpio </h3>
+            <ul class="car-specs">
+                <li><span>120,000</span> mi</li>
+                <li>Auto</li>
+                <li><span>1600</span> hp</li>
+            </ul>
+            <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                        <div class="price">$80,000</div>
+        </div>
+    </div>
+    <div class="car-box">
+        <div class="car-image">
+            <img src="https://imgd.aeplcdn.com/1056x594/n/ylei5ua_1560005.jpg?q=80" alt="Car Image">
+        </div>
+        <div class="car-details">
+            <div class="year">2021</div>
+            <h3 class="car-title">2021 Maruti IGNIS SIGMA 1.2</h3>
+            <ul class="car-specs">
+                <li><span>80,000</span> mi</li>
+                <li>Auto</li>
+                <li><span>1100</span> hp</li>
+            </ul>
+            <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                        <div class="price">$25,000</div>
+        </div>
+    </div>
+    
+
+
+        
+          
+      </div>
+      <div class="col-lg-4">
+          <!-- Column 2 Content -->
+         
+        <div class="car-box">
+          <div class="car-image">
+              <img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/40087/thar-exterior-right-front-three-quarter-35.jpeg?isig=0&q=80" alt="Car Image">
+          </div>
+          <div class="car-details">
+              <div class="year">2021</div>
+              <h3 class="car-title">2021 Mahindra Thar LX </h3>
+              <ul class="car-specs">
+                  <li><span>70,000</span> mi</li>
+                  <li>Auto</li>
+                  <li><span>1100</span> hp</li>
+              </ul>
+              <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                            <div class="price">$100,000</div>
+          </div>
+      </div>
+    
+    <div class="car-box">
+        <div class="car-image">
+            <img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/32597/altroz-exterior-right-front-three-quarter-80.jpeg?isig=0&q=80" alt="Car Image">
+        </div>
+        <div class="car-details">
+            <div class="year">2020</div>
+            <h3 class="car-title">2020 Tata ALTROZ XZ PETROL </h3>
+            <ul class="car-specs">
+                <li><span>75,000</span> mi</li>
+                <li>Auto</li>
+                <li><span>1200</span> hp</li>
+            </ul>
+            <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                        <div class="price">$75,000</div>
+        </div>
+    </div>
+    <div class="car-box">
+        <div class="car-image">
+            <img src="https://imgd.aeplcdn.com/370x208/n/3lat6ra_1421851.jpg?q=80" alt="Car Image">
+        </div>
+        <div class="car-details">
+            <div class="year">2021</div>
+            <h3 class="car-title"> 2021 Toyota Innova</h3>
+            <ul class="car-specs">
+                <li><span>120,000</span> mi</li>
+                <li>Auto</li>
+                <li><span>1800</span> hp</li>
+            </ul>
+            <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                        <div class="price">$120,000</div>
+        </div>
+    </div>
+    <div class="car-box">
+        <div class="car-image">
+            <img src="https://imgd.aeplcdn.com/1280x720/cw/ec/9730/Honda-Brio-20132016-Right-Front-Three-Quarter-81357.jpg?wm=0&q=80" alt="Car Image">
+        </div>
+        <div class="car-details">
+            <div class="year">2013</div>
+            <h3 class="car-title">2013 Honda Brio VX MT</h3>
+            <ul class="car-specs">
+                <li><span>50,000</span> mi</li>
+                <li>Auto</li>
+                <li><span>1000</span> hp</li>
+            </ul>
+            <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                        <div class="price">$45,000</div>
+        </div>
+    </div>
+    <div class="car-box">
+        <div class="car-image">
+            <img src="https://imgd.aeplcdn.com/370x208/n/zill3ra_1429634.jpg?q=80" alt="Car Image">
+        </div>
+        <div class="car-details">
+            <div class="year">2021</div>
+            <h3 class="car-title">2021 Maruti IGNIS SIGMA 1.2</h3>
+            <ul class="car-specs">
+                <li><span>80,000</span> mi</li>
+                <li>Auto</li>
+                <li><span>1100</span> hp</li>
+            </ul>
+            <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                        <div class="price">$25,000</div>
+        </div>
+    </div>
+
+
+
+
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        
+          <!-- Column 3 Content -->
+          <div class="car-box">
+            <div class="car-image">
+                <img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/34024/xuv500-exterior-right-front-three-quarter-3.jpeg?q=80" alt="Car Image">
+            </div>
+            <div class="car-details">
+                <div class="year">2018</div>
+                <h3 class="car-title">2019 Mahindra XUV500 W7</h3>
+                <ul class="car-specs">
+                    <li><span>80,000</span> mi</li>
+                    <li>Auto</li>
+                    <li><span>1100</span> hp</li>
+                </ul>
+                <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                                <div class="price">$98,000</div>
+            </div>
+        </div>
+        <div class="car-box">
+          <div class="car-image">
+              <img src="https://di-uploads-pod34.dealerinspire.com/musiccityhonda/uploads/2021/05/2021-Honda-CR-V-LX.jpg" alt="Car Image">
+          </div>
+          <div class="car-details">
+              <div class="year">2017</div>
+              <h3 class="car-title">2017 Honda CRV 2.0L I-VTEC 2WD AT</h3>
+              <ul class="car-specs">
+                  <li><span>110,000</span> mi</li>
+                  <li>Auto</li>
+                  <li><span>1600</span> hp</li>
+              </ul>
+              <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                            <div class="price">$112,000</div>
+          </div>
+      </div>
+      <div class="car-box">
+        <div class="car-image">
+            <img src="https://imgd-ct.aeplcdn.com/664x415/cw/ec/19751/Maruti-Suzuki-Baleno-Exterior-118756.jpg?wm=0&q=80" alt="Car Image">
+        </div>
+        <div class="car-details">
+            <div class="year">2017</div>
+            <h3 class="car-title">2017 Maruti Baleno DELTA</h3>
+            <ul class="car-specs">
+                <li><span>80,000</span> mi</li>
+                <li>Auto</li>
+                <li><span>1100</span> hp</li>
+            </ul>
+            <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                        <div class="price">$50,000</div>
+        </div>
+    </div>
+    <div class="car-box">
+        <div class="car-image">
+            <img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/112839/glanza-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80" alt="Car Image">
+        </div>
+        <div class="car-details">
+            <div class="year">2022</div>
+            <h3 class="car-title">2022 Toyota Glanza V AMT</h3>
+            <ul class="car-specs">
+                <li><span>90,000</span> mi</li>
+                <li>Auto</li>
+                <li><span>1500</span> hp</li>
+            </ul>
+            <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                        <div class="price">$70,000</div>
+        </div>
+    </div>
+    <div class="car-box">
+        <div class="car-image">
+            <img src="https://imgd-ct.aeplcdn.com/664x415/n/thehl4a_1524875.jpg?q=80" alt="Car Image">
+        </div>
+        <div class="car-details">
+            <div class="year">2020</div>
+            <h3 class="car-title">2020 Tata NEXON XZ PLUS</h3>
+            <ul class="car-specs">
+                <li><span>100,000</span> mi</li>
+                <li>Auto</li>
+                <li><span>1500</span> hp</li>
+            </ul>
+            <button class="buy-button"><a href="{% url 'emicalculator' %}" style="color: white;">Buy Now</a></button>
+                        <div class="price">$80,000</div>
+        </div>
+    </div>
+
+      </div>
+  </div>
+</div>
+<!-- car buy end -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Cars Section</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  /* Additional CSS styles can be added here */
+</style>
+</head>
+<body>
+
+<div class="section" style="padding-top: 50px;text-align: center;">
+  <div class="container">
+     <div class="row cars">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+         <img src="../static/img/maruti-suzuki.png" class="img-fluid">
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+         <img src="../static/img/mahindra.png" class="img-fluid">
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+         <img src="../static/img/honda.png" class="img-fluid">
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+         <img src="../static/img/hyundai.png" class="img-fluid">
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+         <img src="../static/img/tata.png" class="img-fluid">
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+         <img src="../static/img/toyota.png" class="img-fluid">
+        </div>
+     </div>
+  </div>
+ </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- template end -->
+
+
+
+       <!--faq questions  -->
+
+       <section id="section-faq" class="section-faq">
+        <h1>Frequetally Asked Question!!</h1>
+      
+      <ul >
+         <li  style="background-color: white;">
+         <div class="question" style="background-color: white;">
+          <span>Why is cars best place to sell my car online ? </span>
+          <Span class="icon"><i class="fa-solid fa-plus" id="pp"></i> <i class="fa-solid fa-minus" id="mm"></i></Span> 
+         
+          </div>
+      
+          <div class="answer">
+          <span>Not only do we offer a great price on each car we buy with Instant Payment, we ensure the entire car selling exeprience is a hassle-free. The entire process can be completed online, even the physical inspection of car is done at your home as per the date and time decided by you. We also offer full after sales support to ensure you have zero liability until the RC transfer is complete.</span>
+          </div>
+      
+         </li>
+      
+      
+         <li  style="background-color: white;">
+          <div class="question" style="background-color: white;">
+           <span>Can I sell a car that has an ongoing loan on it ? </span>
+           <Span class="icon"><i class="fa-solid fa-plus"></i></Span> 
+           </div>
+       
+           <div class="answer">
+           <span>Yes you can. Based on the valuation of your car, CARS will handle the loan closures on your behalf, and will transfer the remaining balance to your account.</span>
+           </div>
+       
+          </li>
+       
+      
+          
+          <li  style="background-color: white;">
+            <div class="question" style="background-color: white;">
+             <span>Is the car owner required to be present at the time of car pick up & inspection ? </span>
+             <span class="icon"><i class="fa-solid fa-plus"></i></span> 
+             </div>
+         
+             <div class="answer">
+             <span>No. Anyone can be present during the inspection with the required documents and the car keys. The owner only needs to be present to sign documents at the time of sale.</span>
+             </div>
+         
+            </li>
+         
+      
+            
+            <li  style="background-color: white;">
+              <div class="question" style="background-color: white;">
+               <span>Do I need to be present at the RTO for RC transfer ? </span>
+               <Span class="icon"><i class="fa-solid fa-plus"></i></Span> 
+               </div>
+           
+               <div class="answer">
+               <span>We take care of all documentation, including the free RC transfer. In case there is any mismatch in RC like signature mismatch, you may need to be present at the RTO. Some States also require the previous owner to be present at the RTO in order to register the car with the new owner, also known as 'Party Peshi'. A CARS representative will be present with you throughout the process.</span>
+               </div>
+           
+              </li>
+           
+           
+              <li  style="background-color: white;">
+                <div class="question" style="background-color: white;">
+                 <span>How long does the RC transfer take? </span>
+                 <Span class="icon"><i class="fa-solid fa-plus"></i></Span> 
+                 </div>
+             
+                 <div class="answer">
+                 <span>The timeline of the RC transfer might vary depending on the availability of the prospective buyer and the RTO requirements. However, you don’t need to worry about it at all! All our customers are covered under the CARS Seller Protection Policy, which means until the RC transfer of your car is complete, we take full responsibility for the safety of your vehicle. Once the ownership has been transferred, we will send you an email with the proof of RC transfer.</span>
+                 </div>
+             
+                </li>
+             
+      
+                
+                <li  style="background-color: white;">
+                  <div class="question" style="background-color: white;" >
+                   <span>Does CARS buy commercial cars ? </span>
+                   <Span class="icon"><i class="fa-solid fa-plus"></i></Span> 
+                   </div>
+               
+                   <div class="answer">
+                   <span>Unfortunately, we currently do not deal in commercial vehicles.</span> 
+                    </div>
+               
+                  </li>
+               
+               
+      
+      
+      </ul>
+      
+      </section> 
+     
+      <script>
+        const question = document.querySelectorAll('.question');
+        question.forEach(function(q){
+          q.addEventListener('click', function() {
+            q.classList.toggle('open')
+      
+          })
+      
+        }) 
+      
+        </script>
+
+<!-- question end -->
+
+<!-- used car -->
+
+
+<section class="city" style="    margin-bottom: 30px;" >
+  <div class="container">
+  <div class="used">
+           <h2 class="_3york">Used Cars in India</h2>
+              <div class="cities">
+                  <strong>Cities<!-- --> :</strong>
+                  <a href="#">Used Cars in Bangalore</a>
+                  <a href="#">Used Cars in Hyderabad</a>
+                  <a href="#">Used Cars in Pune</a>
+                  <a href="#">Used Cars in Mumbai</a>
+                  <a href="#">Used Cars in Chennai</a>
+                  <a href="#">Used Cars in Ahmedabad</a>
+                  <a href="#">Used Cars in Noida</a>
+                  <a href="#">Used Cars in New Delhi</a>
+                  <a href="#">Used Cars in Gurgaon</a>
+                  <a href="#">Used Cars in Kolkata</a>
+                  <a href="#">Used Cars in Kochi</a>
+                  <a href="#">Used Cars in Lucknow</a>
+                  <a href="#">Used Cars in Surat</a>
+                  <a href="#">Used Cars in Chandigarh</a>
+                  <a href="#">Used Cars in Patna</a>
+                  <a href="#">Used Cars in Nagpur</a>
+                  <a href="#">Used Cars in Coimbatore</a>
+                  <a href="#">Used Cars in Ghaziabad</a>
+                  <a href="#">Used Cars in Faridabad</a>
+                  <a href="#">Used Cars in Indore</a>
+                  <a href="#">Used Cars in Jaipur</a>
+                  <a href="#">Used Cars in Rajkot</a>
+                  <a href="#">Used Cars in Nashik</a>
+                  <a href="#">Used Cars in Ludhiana</a>
+                  <a href="#">Used Cars in Vadodara</a>
+                  <a href="#">Used Cars in Agra</a>
+                  <a href="#">Used Cars in Trivandrum</a>
+                  <a href="#">Used Cars in Mysore</a>
+      </div>
+      <div class="cities">
+          <strong>Make<!-- --> :</strong>
+          <a href="#">Used Maruti Cars in Delhi NCR</a>
+          <a href="#">Used Hyundai Cars in Delhi NCR</a>
+          <a href="#">Used Honda Cars in Delhi NCR</a>
+          
+      </div>
+      <div class="cities">
+          <strong>Body<!-- --> :</strong>
+          <a href="#">Used Hatchback Cars in Delhi NCR</a>
+          <a href="#">Used Sedan Cars in Delhi NCR</a>
+          
+      </div>
+      <div class="cities">
+          <strong>Fuel<!-- --> :</strong>
+          <a href="#">Used Petrol Cars in Delhi NCR</a>
+          <a href="#">Used CNG Cars in Delhi NCR</a>
+              </div>
+      <div class="cities">
+          <strong>Budget<!-- --> :</strong>
+          <a href="#">Used Cars Under 7 lakhs in Delhi NCR</a>
+          <a href="#">Used Cars Under 4 lakhs in Delhi NCR</a>
+          
+      </div>
+      <div class="cities">
+          <strong>Model<!-- --> :</strong>
+          <a href="#">Used Hyundai i10 Cars in Delhi NCR</a>
+          <a href="#">Used Maruti Wagon R Cars in Delhi NCR</a>
+          
+      </div>
+      <div class="cities">
+          <strong>Transmission<!-- --> :</strong>
+          <a href="#">Used Manual Cars</a>
+          <a href="#">Used Automatic Cars</a>
+          
+      </div>
+      <div class="cities">
+          <strong>Explore By<!-- --> :</strong>
+          <a href="#">Used Cars with Sunroof in Delhi NCR</a>
+          
+      </div>
+      <div class="cities">
+          <strong>Owners<!-- --> :</strong>
+          <a href="#">Used First Owner Cars in Delhi NCR</a>
+          
+      </div>
+  </div>
+  
+  </div>
+  </section>
+  
+  
+  
+  <!-- Footer Section Begin -->
+  <footer class="footer set-bg" data-setbg="../static/img/footer-bg.jpg">
+    <div class="container">
+      <div class="footer__contact">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="footer_contact_title">
+              <h2 style="    color: white;">Contact Us Now!</h2>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="footer_contact_option">
+              <div class="option__item" style="    color: white;"><i class="fa fa-phone" style="    color: white;"></i> (+12) 345 678 910</div>
+              <div class="option__item email" style="    color: white;"><i class="fa fa-envelope-o" style="    color: white;"></i> punyapal@gmail.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4">
+          <div class="footer__about">
+            <div class="footer__logo">
+              <a href="#"><img src="../static/img/footer-logo.png" alt="" style="width: 100%;"></a>
+            </div>
+            <p>Any questions? Let us know in store at 625 Gloria Union, California, United Stated or call us
+              on (+1) 96 123 8888</p>
+            <div class="footer__social">
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="google"><i class="fa fa-google"></i></a>
+              <a href="#" class="skype"><i class="fa fa-skype"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 offset-lg-1 col-md-3">
+          <div class="footer__widget">
+            <h5>Infomation</h5>
+            <ul>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Purchase</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Payemnt</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Shipping</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Return</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3">
+          <div class="footer__widget">
+            <h5>Infomation</h5>
+            <ul>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Hatchback</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Sedan</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> SUV</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Crossover</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer__brand">
+            <h5>Top Brand</h5>
+            <ul>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Abarth</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Acura</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Alfa Romeo</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Audi</a></li>
+            </ul>
+            <ul>
+              <li><a href="#"><i class="fa fa-angle-right"></i> BMW</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Chevrolet</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Ferrari</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> Honda</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      <div class="footer_copyright_text">
+        <p>Copyright &copy;
+          <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
+            class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        </p>
+      </div>
+      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+
+
+<!-- Bootstrap and jQuery Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- Script for manually closing Bootstrap dropdowns after click -->
+<script>
+    $(document).ready(function(){
+        $('.dropdown-toggle').on('click', function (e) {
+            var $el = $(this);
+            var $parent = $(this).parent();
+            var $openDropdown = $parent.find('.dropdown-menu');
+            // Close all dropdowns except the one clicked
+            $('.dropdown-menu').not($openDropdown).removeClass('show');
+            // Toggle the dropdown clicked
+            $openDropdown.toggleClass('show');
+            // Prevent default link action
+            return false;
+        });
+
+        // Close dropdowns when clicking outside
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.dropdown-toggle').length) {
+                $('.dropdown-menu').removeClass('show');
+            }
+        });
+    });
+</script>
+
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+      const menuTrigger = document.querySelector('.menu-trigger');
+      const mainNav = document.querySelector('.nav');
+      const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+
+      // Function to toggle the visibility of the main navigation menu
+      function toggleMainNav() {
+          mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
+          // Hide all dropdown menus when toggling the main navigation menu
+          dropdownMenus.forEach(function(dropdownMenu) {
+              dropdownMenu.style.display = 'none';
+          });
+      }
+
+      // Function to toggle the visibility of dropdown menus
+      function toggleDropdownMenu(dropdownMenu) {
+          dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+      }
+
+      // Event listener for menu trigger button
+      menuTrigger.addEventListener('click', function() {
+          toggleMainNav();
+      });
+
+      // Event listeners for dropdown toggle buttons
+      const dropdownToggleButtons = document.querySelectorAll('.dropdown-toggle');
+      dropdownToggleButtons.forEach(function(button) {
+          button.addEventListener('click', function() {
+              const dropdownMenu = this.nextElementSibling;
+              toggleDropdownMenu(dropdownMenu);
+          });
+      });
+  });
+</script>
+<script src="../static/js/jquery-3.3.1.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/jquery.slicknav.js"></script>
+  <script src="../static/js/owl.carousel.min.js"></script>
+  <script src="../static/js/main.js"></script>
+  <script src="../static/js/dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+/* buy car start */
+
+/* Add your custom styles here */
+.column-content {
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .col-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+.car-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.car-image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.year {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.car-title {
+    font-size: 20px;
+    color: #333;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.car-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.car-specs li {
+    display: inline-block;
+    margin-right: 10px;
+    color: #666;
+}
+
+.buy-button {
+    background-color: orangered;;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;;
+    margin-top: 10px;
+}
+/* search bar and heading */
+
+/* Container */
+.car-section {
+    margin-top: 80px;
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Search Input */
+.search-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.search-input input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-icon {
+    margin-left: 10px;
+}
+
+.search-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Clear All */
+/* Clear All Button */
+.clear{
+    margin-right: 16px;
+  padding: 0 8px;
+  min-width: 80px;
+  height: 34px;
+  background: #ef6e0b;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: .02em;
+  color: #fff !important;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.L{
+    margin-right: 16px;
+  padding: 0 8px;
+  min-width: 80px;
+  height: 34px;
+  background: #ef6e0b;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: .02em;
+  color: #fff !important;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* heading */
+/* Heading Styles */
+.heading {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.heading h1 {
+    font-size: 3rem; /* Adjust the font size as needed */
+    font-weight: 700;
+}
+
+.heading span {
+    color: orangered;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .heading h1 {
+        font-size: 1.5rem; 
+    }
+}
+
+/* text */
+
+/* Container Styles */
+.mb-3 {
+    margin-bottom: 1.5rem; 
+}
+
+/* Text Styles */
+.Htext {
+    font-size: 1rem;
+}
+
+/* Button Styles */
+.more {
+    display: block;
+    text-align: center;
+    color: #007bff; 
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .Htext {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+}
+
+
+
+
+/* Price Range Button */
+.price-range {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.price-range li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.price-range li img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+
+/* Price Range */
+.price-range {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.price-range li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.price-range li img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+
+
+/* styles.css */
+
+/* tryal 2 Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-3 {
+    flex: 0 0 25%; /* 25% width on large screens */
+    max-width: 25%;
+    padding: 10px;
+}
+
+.col-9 {
+    flex: 0 0 75%; /* 75% width on large screens */
+    max-width: 75%;
+    padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .col-3, .col-9 {
+        flex: 0 0 100%; /* Full width on small screens */
+        max-width: 100%;
+    }
+}
+
+/* left section */
+
+/* Base styles */
+.custom-modal {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-modal .Mimage {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.custom-modal .Mimage img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.custom-modal-search {
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.custom-modal-search .custom-modal-inner {
+    display: flex;
+    align-items: center;
+}
+
+.custom-modal-search .form-group {
+    position: relative;
+}
+
+.custom-modal-search input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.custom-modal-search .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.custom-modal-search .search-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .custom-modal {
+        padding: 5px;
+    }
+
+    .custom-modal .Mimage {
+        font-size: 16px;
+    }
+
+    .custom-modal-search .search-icon img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .custom-modal .Mimage {
+        font-size: 14px;
+    }
+
+    .custom-modal-search input {
+        font-size: 14px;
+    }
+
+    .custom-modal-search .search-icon img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+
+
+/* buy car end */
+
+
+/* FAQ Section */
+.section-faq{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 50px;
+    background-color: rgb(246, 245, 245);
+    
+    
+}
+
+.section-faq h1{
+    font-size: 3rem;
+    color: rgb(23, 23, 38) ;
+}
+
+.section-faq ul{
+    margin: 3rem auto;
+    width: 88%;
+     /* max-width: 900px;  */
+}
+
+.section-faq ul li{
+    list-style: none;
+    margin-bottom: 8px;
+    /* width: 1250px; */
+    background-color: white;
+    border:  1px solid rgb(23, 23, 38);
+    border-radius: 10px;
+}
+  
+.section-faq .question{
+    color:  rgb(23, 23, 38);
+    margin-bottom: 1px;
+    padding: 20px;
+    width: 96.5%;
+    background-color:  white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 10px;
+
+   /* box-shadow:1px 1px  black ; */
+    
+}
+
+.section-faq .icon{
+    
+    margin-left: 1rem;
+    font-size: 30px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease-in-out; 
+
+}
+
+.section-faq .answer{
+    max-height:0 ;
+    background-color : rgb(206, 198, 198);
+    color:  rgb(23, 23, 38);
+    overflow: hidden;
+    font-size: 20px;
+    transition: max-height  cubic-bezier(0.5, 0, 0.1, 1);
+   border-radius: 10px;
+  
+}
+
+#mm{
+    display: none;
+}
+
+.section-faq .answer span{
+    display: inline-block;
+    padding: 1.6rem;
+}
+
+.section-faq .question.open + .answer{
+    max-height:1200px ;
+}
+
+.section-faq .question.open > .icon{
+   
+    transition: none 0.25s;
+     transform: rotate(30deg); 
+}
+
+/* cities  start*/
+
+/* heading used car */
+
+._3york{
+margin-bottom: 40px;
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #002441;
+}
+
+.cities a {
+    font-size: 16px;
+    line-height: 24px;
+    color: #465166;
+  }
+
+.cities{
+    margin-top: 20px;
+}

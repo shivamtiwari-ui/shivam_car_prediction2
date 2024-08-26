@@ -1,0 +1,1987 @@
+{% load static %}
+<!-- < !doctype html > -->
+    <html lang="en">
+        <head>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+                    <!-- Bootstrap CSS -->
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+                        <!-- font awesome link -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+                        <!--  css file call -->
+                        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+                        
+                           <!-- slick button prev and next -->
+                           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+                           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+                            <title>CAR Prediction</title>
+
+                              <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/cars24.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/sellingcar.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/template.1.css" type="text/css">
+
+
+  <style>
+.dropdown-menu {
+  position: absolute;
+  top: calc(55% + 5px);
+  left: 100px;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: center;
+  margin-left: 28%;
+}
+
+ </style>
+                     </head>
+                        <body>
+                                    
+                            <!-- ***** Header Area Start ***** -->
+                            <header class="header-area header-sticky">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <nav class="main-nav">
+                                                <!-- ***** Logo Start ***** -->
+                                                <a href="/" class="logo">CAR<em> Value</em></a>
+                                                <!-- ***** Logo End ***** -->
+                                                <!-- ***** Menu Start ***** -->
+                                                <ul class="nav">
+                                                    <li class="dropdown">
+                                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Buy a car</a>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" href="{% if user.is_authenticated %}{% url 'delhi' %}{% else %}javascript:alert('Please login to the website');{% endif %}" style="color: black;">Used car Delhi</a>
+                                                            <a class="dropdown-item" href="{% if user.is_authenticated %}{% url 'mumbai' %}{% else %}javascript:alert('Please login to the website');{% endif %}" style="color: black;">Used car Mumbai</a>
+                                                            <a class="dropdown-item" href="{% if user.is_authenticated %}{% url 'banglore' %}{% else %}javascript:alert('Please login to the website');{% endif %}" style="color: black;">Used car Bangalore</a>
+                                                            <a class="dropdown-item" href="{% if user.is_authenticated %}{% url 'ahemdabad' %}{% else %}javascript:alert('Please login to the website');{% endif %}" style="color: black;">Used car Ahmedabad</a>
+                                                            <a class="dropdown-item" href="{% if user.is_authenticated %}{% url 'surat' %}{% else %}javascript:alert('Please login to the website');{% endif %}" style="color: black;">Used car Surat</a>
+                                                            
+                                                        </div>
+                                                    </li>
+                                                    <li class="dropdown">
+                                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sell a car</a>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" href="{% if user.is_authenticated %}{% url 'carvaluation' %}{% else %}javascript:alert('Please login to the website');{% endif %}" style="color: black;">Used car valuation</a>
+                                                           
+                                                        </div>
+                                                    </li>
+                                                    <li class="dropdown">
+                                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Car finance</a>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" href="{% if user.is_authenticated %}{% url 'loan' %}{% else %}javascript:alert('Please login to the website');{% endif %}" style="color: black;">Used car loan</a>
+                                                            
+                                                          
+                                                            <a class="dropdown-item" href="{% if user.is_authenticated %}{% url 'emicalculator' %}{% else %}javascript:alert('Please login to the website');{% endif %}" style="color: black;">Used car EMI calculator</a>
+                                                           
+                                                        
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="{% if user.is_authenticated %}{% url 'blog' %}{% else %}javascript:alert('Please login to the website');{% endif %}">Blog</a></li> 
+                                                    <li class="dropdown">
+                                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Car Service</a>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" href="{% if user.is_authenticated %}challan/{% else %}javascript:alert('Please login to the website');{% endif %}" style="color: black;">View and pay challan</a>
+                                                        </div>
+                                                    </li>
+                                                    {% if user.is_authenticated %}
+                                                        <li><a href="{% url 'logout' %}" style="color:white">Log Out</a></li> 
+                                                        <li><p style="color: white; margin-top: 7px;">Welcome, <span style="color:red;">{{ user.username }}</span></p></li> 
+                                                    {% else %}
+                                                        <script>
+                                                            function redirectToLogin() {
+                                                                window.location.href = "{% url 'signin' %}";
+                                                            }
+                                                        </script>
+                                                        <li><a href="#" onclick="redirectToLogin()">Log In</a></li>
+                                                    {% endif %}
+                                                </ul>        
+                                                <a class='menu-trigger' style="background: black;border-radius: 10px;">
+                                                    <span>Menu</span>
+                                                </a>
+                                                <!-- ***** Menu End ***** -->
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner" id="top">
+        <video autoplay muted loop id="bg-video">
+            <source src="../static/img/thar.mp4" type="video/mp4" />
+        </video>
+
+        <div class="video-overlay header-text">
+            <div class="caption">
+                <h6>Best car deelership</h6>
+                <h2>Best <em>car dealer</em> in Indore!</h2>
+                <div class="row">
+                    {% if user.is_authenticated %}
+                        <div class="main-button col-md-3">
+                            <a href="https://sanchit123.streamlit.app/" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-info">Predict your Car price</a>
+                        </div>
+                        <div class="main-button col-md-3">
+                            <a href="https://shivamtiwari.streamlit.app/" style="color: white;font-size: larger;border-radius: 25px;" class="btn btn-primary">Resale Price Honda</a>
+                        </div>
+                        <div class="main-button col-md-3">
+                            <a href="https://loan-2.onrender.com" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-danger">Loan Detail here</a>
+                        </div>
+                        <div class="main-button col-md-3">
+                            <a href="https://himanshu123.streamlit.app/" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-success">Future Car Prediction</a>
+                        </div>
+                    {% else %}
+                        <div class="col-md-3">
+                            <button onclick="alert('Please login to the website')" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-info">Predict your Car price</button>
+                        </div>
+                        <div class="col-md-3">
+                            <button onclick="alert('Please login to the website')" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-primary">Resale Price Honda</button>
+                        </div>
+                        <div class="col-md-3">
+                            <button onclick="alert('Please login to the website')" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-danger">Loan Detail here</button>
+                        </div>
+                        <div class="col-md-3">
+                            <button onclick="alert('Please login to the website')" style="color:white;font-size: larger;border-radius: 25px;" class="btn btn-success">Future Car Prediction</button>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+                            
+                                        <!-- <div class="pDycU">
+                                            <h2 class="_3york">Why buy from us ?
+
+                                        </h2>
+                                    </div> -->
+
+                                      <!-- second template -->
+                                      <div class="section" style="padding-top: 50px;text-align: center;height: 150px;">
+                                         <div class="container">
+                                            <div class="row cars">
+                                               <div class="col">
+                                                <img src="../static/img/maruti-suzuki.png">
+                                               </div>
+                                               <div class="col">
+                                                <img src="../static/img/mahindra.png">
+                                               </div>
+                                               <div class="col">
+                                                <img src="../static/img/renault.png">
+                                               </div>
+                                               <div class="col">
+                                                <img src="../static/img/volkswagen.png">
+                                               </div>
+                                               <div class="col">
+                                                <img src="../static/img/honda.png">
+                                               </div>
+                                               <div class="col">
+                                                <img src="../static/img/hyundai.png">
+                                               </div>
+                                               <div class="col">
+                                                <img src="../static/img/tata.png">
+                                               </div>
+                                               <div class="col">
+                                                <img src="../static/img/toyota.png">
+                                               </div>
+                                            </div>
+                                         </div>
+                                        </div>
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      <!-- template end -->
+
+
+                                      <div class="pDycU"><h2 class="_3york">Why buy from us ?
+
+                                            </h2>
+                                        </div>
+                                        <div class="_12cJ1">
+                                            <div class="_1fxug">
+                                                <div class="_19uXo">
+                                                <div class="_3zWe3">
+                                                    <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color:transparent;display:inline-block">
+                                                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/88440a417a25b2afa28eaf1fe1be3d94.png" alt="CARS24 Warranty">
+                                                    </span>
+                                                </div>
+                                                <div class="_1f_Jc">
+                                                    <div>
+                                                    <h3>
+                                                        CARS Warranty</h3>
+                                                        <p>Enjoy complete peace of mind with warranty plans up to 12 months to protect your car against unforeseen repairs</p>
+                                                    </div>
+                                                    <span class="_3G7HF">CAR VALUE
+                                                        <img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/240420160214/js/4c33768dc2869197d8280dbde6ec7ff2.svg" style="width:24;height:24;transform:rotate(0deg)" alt="arrow">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="_19uXo">
+                                                <div class="_3zWe3">
+                                                    <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color:transparent;display:inline-block">
+                                                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/0780024975b43bbc27de11abe476eeb3.png" alt="7-Day Return"></span>
+                                                    </div>
+                                                    <div class="_1f_Jc">
+                                                        <div>
+                                                            <h3>7-Day Return</h3>
+                                                            <p>Love it, keep it. Changed your mind? Return it within 7 days for a full refund</p>
+                                                        </div>
+                                                        <span class="_3G7HF">CAR VALUE 
+                                                            <img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/240420160214/js/4c33768dc2869197d8280dbde6ec7ff2.svg" style="width:24;height:24;transform:rotate(0deg)" alt="arrow">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="_19uXo">
+                                                    <div class="_3zWe3">
+                                                        <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color:transparent;display:inline-block">
+                                                            <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/05fa29738dae540689da4b0c6347a602.png" alt="Easy Financing Options">
+                                                        </span>
+                                                    </div>
+                                                    <div class="_1f_Jc">
+                                                        <div>
+                                                            <h3>Easy Financing Options</h3>
+                                                            <p>Become eligible for Zero Down Payment via EMIs of up to 72 months and instant loans</p>
+                                                        </div>
+                                                        <span class="_3G7HF">CAR VALUE 
+                                                            <img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/240420160214/js/4c33768dc2869197d8280dbde6ec7ff2.svg" style="width:24;height:24;transform:rotate(0deg)" alt="arrow">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="_19uXo"><div class="_3zWe3">
+                                                    <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color:transparent;display:inline-block">
+                                                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/afe81fe1521e66f42716262bcf10ff93.png" alt="140-Quality Checks">
+                                                    </span>
+                                                </div>
+                                                <div class="_1f_Jc">
+                                                    <div>
+                                                        <h3>140-Quality Checks</h3>
+                                                        <p>Inspected across 140 parameters and refurbished by auto-experts, our cars are ready for the road</p>
+                                                    </div>
+                                                    <span class="_3G7HF">CAR VALUE 
+                                                        <img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/240420160214/js/4c33768dc2869197d8280dbde6ec7ff2.svg" style="width:24;height:24;transform:rotate(0deg)" alt="arrow">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                   
+                                         <!-- templeate -->
+                                    
+                                 <div class="container">
+                                    <section data-hydration-on-demand="true">
+                                        <div class="_-3FcH">
+                                            <h2 class="_3york">Buy in 3 easy steps
+
+                                            </h2>
+                                            <p class="_3gm3d">Adding smiles to your miles. Car buying made simpler</p>
+                                            <div class="_3Y-Uu">
+                                                <div class="U-zEE">
+                                                    <div class="media _3j4Fd">
+                                                        <div class="_3AYCv">
+                                                            <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/9e92bcab2fd9bc176386e4bfc9f65505.png">
+                                                            </span>
+                                                        </div>
+                                                        <div class="media-body ml-4">
+                                                            <h4 class="_1bOFw">Find the perfect car</h4>
+                                                            <p class="_3XORu">Seamlessly browse thousands of MRL Certified cars</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="media _3j4Fd">
+                                                        <div class="_3AYCv">
+                                                            <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/8053a0843b65a35f00ca5d46809ce838.png">
+                                                            </span>
+                                                        </div>
+                                                        <div class="media-body ml-4">
+                                                            <h4 class="_1bOFw">Test Drive at CARS hub
+
+                                                            </h4>
+                                                            <p class="_3XORu">Enjoy the convenience of a home test drive or visit a CARS hub for free</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="media _3j4Fd">
+                                                        <div class="_3AYCv">
+                                                            <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/6efc481454a5f9e21e15ddfe5d7ac6f6.png">
+                                                            </span>
+                                                        </div>
+                                                        <div class="media-body ml-4">
+                                                            <h4 class="_1bOFw">Buy it your way
+
+                                                            </h4>
+                                                            <p class="_3XORu">You can pay in full or have it financed, the choice is yours</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+
+                                     
+                                    <div class="_2Xxj_">
+                                        <h2 class="_3york">Featured cars</h2>
+                                        <section>
+                                            <div class="Jjlk3"><div class="_73XSj">
+                                                <button type="button" class="slick-prev _1KfL7">Previous
+
+                                                </button>
+                                                <div class="_1gddD" style="gap: 24px;">
+                                                    <div class="slideBox _3aNnc">
+                                                        <div class="_1dLEG">
+                                                            <a href="{% url 'delhi' %}" target="_blank" class="_2kfVy">
+                                                                <div class="align-self-center _1-sP-">
+                                                                    <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                        <img src="https://fastly-production.24c.in/hello-ar/dev/uploads/661935da508072a12f07e516/de48bc24-c08e-47eb-b966-4d818d06fbb3/slot/10197281709-3f54bd417ce1415fbbd029272031fba8-Exterior-6.jpg?w=690&amp;auto=format" alt="2021 Mahindra Thar LX PETROL HT 4WD AT, Automatic, 25,783 km, Petrol Car" class="_4x0mJ">
+                                                                    </span>
+                                                                </div>
+                                                                <div class="_2z-Yu">
+                                                                    <div class="_1mlAq">
+                                                                        <h3 class="_2lmIw">2021 Mahindra Thar
+
+                                                                        </h3>
+                                                                        <div class="_1LNXN">
+                                                                            <button>
+                                                                                <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <ul class="_1hOnS">
+                                                                        <li>LX PETROL HT 4WD AT</li>
+                                                                        <li class="_1aIyR"></li>
+                                                                        <li>Automatic</li>
+                                                                    </ul>
+                                                                    <ul class="_13yb6">
+                                                                        <li>25,783 km</li>
+                                                                        <li>1st Owner</li>
+                                                                        <li>Petrol</li>
+                                                                        <li>HR-98</li>
+                                                                    </ul>
+                                                                    <div>
+                                                                        <div class="WNwWR">
+                                                                            <div class="_1Em-A">
+                                                                                <strong>₹27,257/month</strong>
+                                                                                <span>₹27,996/month</span>
+                                                                                <span class="_2JX5N"> 
+                                                                                    Zero down payment
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="_18ToE">
+                                                                                <span>₹14,32,000</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="_351jJ">
+                                                                            <span class="_3DYbK">
+                                                                                <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address">Spaze Platinum, Sohna Road, Gurugram -->
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slideBox _3aNnc">
+                                                        <div class="_1dLEG">
+                                                            <a href="{% url 'mumbai' %}" target="_blank" class="_2kfVy">
+                                                                <div class="align-self-center _1-sP-">
+                                                                    <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                        <img src="https://fastly-production.24c.in/hello-ar/dev/uploads/661f7afaabf84f67b82390b6/50c22b0e-65cc-4183-a89b-6bda028b2c24/slot/10111080708-2625dc0b3b454dd3b665e9877b0af96f-Exterior-7.jpg?w=690&amp;auto=format" alt="2021 Maruti Dzire ZXI Plus AMT, Automatic, 38,850 km, Petrol Car" class="_4x0mJ">
+                                                                    </span>
+                                                                </div>
+                                                                <div class="_2z-Yu"><div class="_1mlAq">
+                                                                    <h3 class="_2lmIw">2021 Maruti Dzire
+
+                                                                    </h3>
+                                                                    <div class="_1LNXN">
+                                                                        <button>
+                                                                            <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="_1hOnS">
+                                                                    <li>ZXI Plus AMT</li>
+                                                                    <li class="_1aIyR"></li>
+                                                                    <li>Automatic</li>
+                                                                </ul>
+                                                                <ul class="_13yb6">
+                                                                    <li>38,850 km</li>
+                                                                    <li>2nd Owner</li>
+                                                                    <li>Petrol</li>
+                                                                    <li>HR-26</li>
+                                                                </ul>
+                                                                <div>
+                                                                    <div class="WNwWR">
+                                                                        <div class="_1Em-A">
+                                                                            <strong>₹14,534/month</strong>
+                                                                            <span class="_2JX5N"> Zero down payment
+
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="_18ToE">
+                                                                            <span>₹7,43,400</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="_351jJ">
+                                                                        <span class="_3DYbK">
+                                                                            <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address">M3M Urbana, Golf Course Ext., Gurugram -->
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="slideBox _3aNnc">
+                                                    <div class="_1dLEG"><a href="{% url 'ahemdabad' %}" target="_blank" class="_2kfVy">
+                                                        <div class="align-self-center _1-sP-">
+                                                            <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                <img src="https://fastly-production.24c.in/hello-ar/dev/uploads/661e8034e4f4eaa2fe4083cd/12d9756f-0d1a-4818-b2f9-24ac11c2d944/slot/11274384721-e29313be5a514a498aed15466261be97-Exterior-6.jpg?w=690&amp;auto=format" alt="2021 Mahindra Thar LX PETROL HT 4WD AT, Automatic, 33,891 km, Petrol Car" class="_4x0mJ">
+                                                            </span>
+                                                        </div>
+                                                        <div class="_2z-Yu">
+                                                            <div class="_1mlAq">
+                                                                <h3 class="_2lmIw">2021 Mahindra Thar
+                                                                    
+                                                                </h3>
+                                                                <div class="_1LNXN">
+                                                                    <button>
+                                                                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <ul class="_1hOnS">
+                                                                <li>LX PETROL HT 4WD AT</li>
+                                                                <li class="_1aIyR"></li>
+                                                                <li>Automatic</li>
+                                                            </ul>
+                                                            <ul class="_13yb6">
+                                                                <li>33,891 km</li>
+                                                                <li>1st Owner</li>
+                                                                <li>Petrol</li>
+                                                                <li>UP-14</li>
+                                                            </ul>
+                                                            <div>
+                                                                <div class="WNwWR">
+                                                                    <div class="_1Em-A">
+                                                                        <strong>₹26,305/month
+
+                                                                        </strong>
+                                                                        <span>₹27,018/month</span>
+                                                                        <span class="_2JX5N"> 
+                                                                            Zero down payment
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="_18ToE">
+                                                                        <span>
+                                                                            ₹13,82,000
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="_351jJ">
+                                                                    <span class="_3DYbK">
+                                                                        <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address">Sector-18, Noida -->
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="slideBox _3aNnc">
+                                                <div class="_1dLEG">
+                                                    <a href="{% url 'surat' %}" target="_blank" class="_2kfVy">
+                                                        <div class="align-self-center _1-sP-">
+                                                            <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                <img src="https://fastly-production.24c.in/hello-ar/dev/uploads/662246254e41857c325e68a5/dc24cb7f-52bf-4e86-a41f-d9b5de8958a0/slot/10058184700-3f3770af4cf240ccb226374958b8c41c-Exterior-7.jpg?w=690&amp;auto=format" alt="2019 Maruti Ciaz ALPHA  AT 1.5 SHVS PETROL, Automatic, 38,482 km, Petrol Car" class="_4x0mJ">
+                                                            </span>
+                                                        </div>
+                                                        <div class="_2z-Yu">
+                                                            <div class="_1mlAq">
+                                                                <h3 class="_2lmIw">
+                                                                    2019 Maruti Ciaz
+                                                                </h3>
+                                                                <div class="_1LNXN">
+                                                                    <button>
+                                                                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <ul class="_1hOnS">
+                                                                <li>ALPHA  AT 1.5 SHVS PETROL</li>
+                                                                <li class="_1aIyR"></li>
+                                                                <li>Automatic</li>
+                                                            </ul>
+                                                            <ul class="_13yb6">
+                                                                <li>38,482 km</li>
+                                                                <li>1st Owner</li>
+                                                                <li>Petrol</li>
+                                                                <li>DL-9C</li>
+                                                            </ul>
+                                                            <div>
+                                                                <div class="WNwWR">
+                                                                    <div class="_1Em-A">
+                                                                        <strong>₹15,760/month
+
+                                                                        </strong>
+                                                                        <span>₹16,188/month</span>
+                                                                        <span class="_2JX5N"> Zero down payment
+
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="_18ToE"><span>
+                                                                        ₹8,28,000
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="_351jJ">
+                                                                <span class="_3DYbK">
+                                                                    <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address">GIP Mall, Noida -->
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="slideBox _3aNnc">
+                                            <div class="_1dLEG">
+                                                <a href="{% url 'delhi' %}" target="_blank" class="_2kfVy">
+                                                    <div class="align-self-center _1-sP-">
+                                                        <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                            <img src="../static/img/venue2.jpg" alt="2019 Maruti Ciaz ALPHA  AT 1.5 SHVS PETROL, Automatic, 38,482 km, Petrol Car" class="_4x0mJ">
+                                                        </span>
+                                                    </div>
+                                                    <div class="_2z-Yu">
+                                                        <div class="_1mlAq">
+                                                            <h3 class="_2lmIw">
+                                                                2021 Hyundai VENUE
+                                                            </h3>
+                                                            <div class="_1LNXN">
+                                                                <button>
+                                                                    <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="_1hOnS">
+                                                            <li>SX 1.0 TURBO</li>
+                                                            <li class="_1aIyR"></li>
+                                                            <li>Manual</li>
+                                                        </ul>
+                                                        <ul class="_13yb6">
+                                                            <li>29,239 km</li>
+                                                            <li>2nd Owner</li>
+                                                            <li>Petrol</li>
+                                                            <li>DL-5C</li>
+                                                        </ul>
+                                                        <div>
+                                                            <div class="WNwWR">
+                                                                <div class="_1Em-A">
+                                                                    <strong>₹18,254/month</strong>
+                                                                    <span>
+                                                                        ₹18,749/month
+                                                                    </span>
+                                                                    <span class="_2JX5N"> 
+                                                                        Zero down payment
+                                                                    </span>
+                                                                </div>
+                                                                <div class="_18ToE">
+                                                                    <span>
+                                                                        ₹9,59,000
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="_351jJ">
+                                                                <span class="_3DYbK">
+                                                                    <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address">Metro Walk, Rohini, New Delhi -->
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="slideBox _3aNnc">
+                                            <div class="_1dLEG">
+                                                <a href="{% url 'delhi' %}" target="_blank" class="_2kfVy">
+                                                    <div class="align-self-center _1-sP-">
+                                                        <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                            <img src="../static/img/scorpio.jpg" alt="2019 Maruti Ciaz ALPHA  AT 1.5 SHVS PETROL, Automatic, 38,482 km, Petrol Car" class="_4x0mJ">
+                                                        </span>
+                                                    </div>
+                                                    <div class="_2z-Yu">
+                                                        <div class="_1mlAq">
+                                                            <h3 class="_2lmIw">
+                                                                2021 Mahindra Scorpio
+                                                            </h3>
+                                                            <div class="_1LNXN">
+                                                                <button>
+                                                                    <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="_1hOnS">
+                                                            <li>S11 2WD</li>
+                                                            <li class="_1aIyR"></li>
+                                                            <li>Manual</li>
+                                                        
+                                                        </ul>
+                                                        <ul class="_13yb6">
+                                                            <li>9,634 km</li>
+                                                            <li>1st Owner</li>
+                                                            <li>Diesel</li>
+                                                            <li>DL-7C</li>
+                                                        </ul>
+                                                        <div>
+                                                            <div class="WNwWR">
+                                                                <div class="_1Em-A">
+                                                                    <strong>₹32,510/month</strong>
+                                                                    <span>₹33,392/month</span>
+                                                                    <span class="_2JX5N"> 
+                                                                        Zero down payment
+                                                                    </span>
+                                                                </div>
+                                                                <div class="_18ToE">
+                                                                    <span>
+                                                                        ₹17,08,000
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="_351jJ">
+                                                                <span class="_3DYbK">
+                                                                    <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"> -->
+                                                                    Metro Walk, Rohini, New Delhi
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="slideBox _3aNnc">
+                                            <div class="_1dLEG">
+                                                <a href="{% url 'mumbai' %}" target="_blank" class="_2kfVy">
+                                                    <div class="align-self-center _1-sP-">
+                                                        <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                            <img src="../static/img/tribber.webp" alt="2019 Maruti Ciaz ALPHA  AT 1.5 SHVS PETROL, Automatic, 38,482 km, Petrol Car" class="_4x0mJ">
+                                                        </span>
+                                                    </div>
+                                                    <div class="_2z-Yu">
+                                                        <div class="_1mlAq">
+                                                            <h3 class="_2lmIw">
+                                                                2022 Renault TRIBER
+                                                            </h3>
+                                                            <div class="_1LNXN">
+                                                                <button>
+                                                                    <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="_1hOnS">
+                                                            <li>RXZ</li>
+                                                            <li class="_1aIyR"></li>
+                                                            <li>Manual</li>
+                                                        </ul>
+                                                        <ul class="_13yb6">
+                                                            <li>8,041 km</li>
+                                                            <li>1st Owner</li>
+                                                            <li>Petrol</li>
+                                                            <li>DL-9C</li>
+                                                        </ul>
+                                                        <div>
+                                                            <div class="WNwWR">
+                                                                <div class="_1Em-A">
+                                                                    <strong>
+                                                                        ₹15,331/month
+                                                                    </strong>
+                                                                    <span class="_2JX5N"> 
+                                                                        Zero down payment
+                                                                    </span>
+                                                                </div>
+                                                                <div class="_18ToE">
+                                                                    <span>
+                                                                        ₹7,84,200
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="_351jJ">
+                                                                <span class="_3DYbK">
+                                                                    <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"> -->
+                                                                    Metro Walk, Rohini, New Delhi
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="slideBox _3aNnc">
+                                            <div class="_1dLEG">
+                                                <a href="#" target="_blank" class="_2kfVy">
+                                                    <div class="align-self-center _1-sP-">
+                                                        <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                            <img src="../static/img/venue.png" alt="2019 Maruti Ciaz ALPHA  AT 1.5 SHVS PETROL, Automatic, 38,482 km, Petrol Car" class="_4x0mJ">
+                                                        </span>
+                                                    </div>
+                                                    <div class="_2z-Yu">
+                                                        <div class="_1mlAq">
+                                                            <h3 class="_2lmIw">
+                                                                2019 Hyundai VENUE
+                                                            </h3>
+                                                            <div class="_1LNXN">
+                                                                <button>
+                                                                    <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="_1hOnS">
+                                                            <li>
+                                                                SX 1.0 (O) TURBO
+                                                            </li>
+                                                            <li class="_1aIyR">
+
+                                                            </li>
+                                                            <li>Manual</li>
+                                                        </ul>
+                                                        <ul class="_13yb6">
+                                                            <li>57,649 km</li>
+                                                            <li>2nd Owner</li>
+                                                            <li>Petrol</li>
+                                                            <li>DL-9C</li>
+                                                        </ul>
+                                                        <div>
+                                                            <div class="WNwWR">
+                                                                <div class="_1Em-A">
+                                                                    <strong>₹15,621/month</strong>
+                                                                    <span class="_2JX5N"> Zero down payment
+
+                                                                    </span>
+                                                                </div>
+                                                                <div class="_18ToE">
+                                                                    <span>₹7,99,000</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="_351jJ">
+                                                                <span class="_3DYbK">
+                                                                    <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"> -->
+                                                                    KW Delhi 6, Raj Nagar Extension, Ghaziabad
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="slideBox _3aNnc">
+                                            <div class="_1dLEG">
+                                                <a href="#" target="_blank" class="_2kfVy">
+                                                    <div class="align-self-center _1-sP-">
+                                                        <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                            <img src="../static/img/i20.jpg" alt="2019 Maruti Ciaz ALPHA  AT 1.5 SHVS PETROL, Automatic, 38,482 km, Petrol Car" class="_4x0mJ">
+                                                        </span>
+                                                    </div>
+                                                    <div class="_2z-Yu">
+                                                        <div class="_1mlAq">
+                                                            <h3 class="_2lmIw">
+                                                                2022 Hyundai NEW I20
+                                                            </h3>
+                                                            <div class="_1LNXN">
+                                                                <button>
+                                                                    <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="_1hOnS">
+                                                            <li>ASTA (O) 1.2 AT</li>
+                                                            <li class="_1aIyR">
+
+                                                            </li>
+                                                            <li>Automatic</li>
+                                                        </ul>
+                                                        <ul class="_13yb6">
+                                                            <li>
+                                                                7,906 km
+                                                            </li>
+                                                            <li>
+                                                                1st Owner
+                                                            </li>
+                                                            <li>
+                                                                Petrol
+                                                            </li>
+                                                            <li>
+                                                                DL-3C
+                                                            </li>
+                                                        </ul>
+                                                        <div>
+                                                            <div class="WNwWR">
+                                                                <div class="_1Em-A">
+                                                                    <strong>
+                                                                        ₹18,806/month
+                                                                    </strong>
+                                                                    <span>₹19,316/month
+
+                                                                    </span>
+                                                                    <span class="_2JX5N"> 
+                                                                        Zero down payment
+                                                                    </span>
+                                                                </div>
+                                                                <div class="_18ToE">
+                                                                    <span>
+                                                                        ₹9,88,000
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="_351jJ">
+                                                                <span class="_3DYbK">
+                                                                    <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"> -->
+                                                                    Metro Walk, Rohini, New Delhi
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="slideBox _3aNnc"><div class="_1dLEG"><a href="#" target="_blank" class="_2kfVy">
+                                            <div class="align-self-center _1-sP-">
+                                                <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                    <img src="../static/img/i10.jpg" alt="2019 Maruti Ciaz ALPHA  AT 1.5 SHVS PETROL, Automatic, 38,482 km, Petrol Car" class="_4x0mJ">
+                                                </span>
+                                            </div>
+                                            <div class="_2z-Yu">
+                                                <div class="_1mlAq">
+                                                    <h3 class="_2lmIw">
+                                                        2017 Hyundai Grand i10
+                                                    </h3>
+                                                    <div class="_1LNXN">
+                                                        <button>
+                                                            <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <ul class="_1hOnS">
+                                                    <li>
+                                                        SPORTZ 
+                                                        (O) 1.2 AT VTVT
+                                                    </li>
+                                                    <li class="_1aIyR">
+
+                                                    </li>
+                                                    <li>
+                                                        Automatic
+                                                    </li>
+                                                </ul>
+                                                <ul class="_13yb6">
+                                                    <li>
+                                                        89,733 km
+                                                    </li>
+                                                    <li>
+                                                        1st Owner
+                                                    </li>
+                                                    <li>
+                                                        Petrol
+                                                    </li>
+                                                    <li>HR-26</li>
+                                                </ul>
+                                                <div>
+                                                    <div class="WNwWR">
+                                                        <div class="_1Em-A">
+                                                            <strong>₹9,756/month</strong>
+                                                            <span class="_2JX5N"> 
+                                                                Zero down payment
+                                                            </span>
+                                                        </div>
+                                                        <div class="_18ToE">
+                                                            <span>
+                                                                ₹4,99,000
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_351jJ">
+                                                        <span class="_3DYbK">
+                                                            <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"> -->
+                                                            Metro Walk, Rohini, New Delhi
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <section data-hydration-on-demand="true">
+
+            </section>
+        </div>
+                                        
+                                 <!-- new template -->
+                                      <!-- <div class="container">
+                                        <section data-hydration-on-demand="true">
+                                            <div class="_3MhUS">
+                                                <h2 class="_3york">
+                                                    Cars by category
+                                                </h2>
+                                                <div class="_3GylN">
+                                                    <ul>
+                                                        <li class="DjJ7W">
+                                                            <h4>
+                                                                Budget
+                                                            </h4>
+                                                            <p>
+                                                                Under 3 lakh, 3-5 lakh...
+                                                            </p>
+                                                        </li>
+                                                        <li class="">
+                                                            <h4>Year
+
+                                                            </h4>
+                                                            <p>
+                                                                2020-22, 2018-20...
+                                                            </p>
+                                                        </li>
+                                                        <li class="">
+                                                            <h4>
+                                                                Body type
+                                                            </h4><p>Hatchback, Sedan, ...</p>
+                                                        </li>
+                                                        <li class="">
+                                                            <h4>
+                                                                Fuel type
+                                                            </h4>
+                                                            <p>Petrol, Diesel...</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="_3UK5Y _3wzzb">
+                                                    <ul>
+                                                        <li>
+                                                            <span class="GnZiI">Under
+
+                                                            </span>
+                                                            <strong>
+                                                                3 lakh
+                                                            </strong>
+                                                            <label>
+                                                                96 Cars
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <span class="GnZiI">
+                                                                From
+                                                            </span>
+                                                            <strong>
+                                                                3 lakh - 5 lakh
+                                                            </strong>
+                                                            <label>290 Cars
+
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <span class="GnZiI">From
+
+                                                            </span>
+                                                            <strong>5 lakh - 7 lakh
+
+                                                            </strong>
+                                                            <label>325 Cars</label>
+                                                        </li>
+                                                        <li><span class="GnZiI">From</span>
+                                                            <strong>7 lakh - 10 lakh</strong>
+                                                            <label>211 Cars</label>
+                                                        </li>
+                                                        <li><span class="GnZiI">Above
+
+                                                        </span>
+                                                        <strong>10 lakh</strong>
+                                                        <label>99 Cars</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </section>
+                                      </div> --> 
+
+
+                                      <!-- new template -->
+                                      <section>
+                                        <div class="_3N-5Y">
+                                            <div class="container" style="border: none;">
+                                                <h2 class="_3york">Recently added cars</h2>
+                                                <div class="_2R05h"><div class="_73XSj">
+                                                    <!-- <button type="button" class="slick-prev _1KfL7">Previous</button> -->
+                                                    <div class="_1gddD" style="gap: 24px;">
+                                                        <div class="slideBox _3aNnc">
+                                                            <div class="_9s0df">
+                                                            <a href="#" target="_blank" class="_2kfVy"><div class="align-self-center _1-sP-">
+                                                                <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                    <img src="https://fastly-production.24c.in/hello-ar/dev/uploads/dccddfea-1dc9-4387-b412-d147cd848970/64726ad2-9c68-4107-b138-2dafc5764f75/42.jpg?w=690&amp;auto=format" alt="2019 Maruti New Wagon-R LXI CNG 1.0, Manual, 71,919 km, CNG Car" class="_4x0mJ">
+                                                                </span>
+                                                                <span class="_3d-8-">Listed Today</span>
+                                                            </div>
+                                                            <div class="_2z-Yu">
+                                                                <div class="_1mlAq">
+                                                                    <h3 class="_2lmIw">2019 Maruti New Wagon-R</h3>
+                                                                    <div class="_1LNXN">
+                                                                        <button>
+                                                                            <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="_1hOnS">
+                                                                    <li>LXI CNG 1.0</li>
+                                                                    <li class="_1aIyR"></li>
+                                                                    <li>Manual</li>
+                                                                </ul>
+                                                                <ul class="_13yb6">
+                                                                    <li>71,919 km</li>
+                                                                    <li>1st Owner</li>
+                                                                    <li>CNG</li>
+                                                                    <li>DL-2C</li>
+                                                                </ul>
+                                                                <div>
+                                                                    <div class="WNwWR">
+                                                                        <div class="_1Em-A">
+                                                                            <strong>
+                                                                                
+                                                                                ₹9,560/month
+
+                                                                            </strong>
+                                                                            <span class="_2JX5N"> Zero down payment
+
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="_18ToE">
+                                                                            <span>₹4,89,000</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="_351jJ">
+                                                                        <span class="_3DYbK">
+                                                                            <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address">GIP Mall, Noida -->
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="slideBox _3aNnc"><div class="_9s0df">
+                                                    <a href="#" target="_blank" class="_2kfVy">
+                                                        <div class="align-self-center _1-sP-">
+                                                            <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                <img src="https://fastly-production.24c.in/hello-ar/dev/uploads/6623854fd25f6d5e5d901ac4/4c4de209-2834-4434-a909-c10f5de50f7f/slot/10054187745-0e18fef1ba8844399b9ba35693bb7c9a-Exterior-7.jpg?w=690&amp;auto=format" alt="2019 Maruti Dzire VXI, Manual, 35,601 km, Petrol Car" class="_4x0mJ">
+                                                            </span>
+                                                            <span class="_3d-8-">Listed Today</span>
+                                                        </div>
+                                                        <div class="_2z-Yu"><div class="_1mlAq">
+                                                            <h3 class="_2lmIw">
+                                                                2019 Maruti Dzire
+                                                            </h3>
+                                                            <div class="_1LNXN">
+                                                                <button>
+                                                                    <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="_1hOnS">
+                                                            <li>VXI</li>
+                                                            <li class="_1aIyR"></li>
+                                                            <li>Manual</li>
+                                                        </ul>
+                                                        <ul class="_13yb6">
+                                                            <li>35,601 km</li>
+                                                            <li>1st Owner</li>
+                                                            <li>Petrol</li>
+                                                            <li>DL-6C</li>
+                                                        </ul>
+                                                        <div>
+                                                            <div class="WNwWR">
+                                                                <div class="_1Em-A">
+                                                                    <strong>
+                                                                        ₹11,124/month
+                                                                    </strong>
+                                                                    <span class="_2JX5N">
+                                                                         Zero down payment
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="_18ToE">
+                                                                        <span>
+                                                                            ₹5,69,000
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="_351jJ">
+                                                                    <span class="_3DYbK">
+                                                                        <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"> -->
+                                                                        GIP Mall, Noida
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="slideBox _3aNnc">
+                                                <div class="_9s0df">
+                                                    <a href="#" target="_blank" class="_2kfVy">
+                                                        <div class="align-self-center _1-sP-">
+                                                            <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                <img src="https://fastly-production.24c.in/hello-ar/dev/uploads/40ed443b-66be-4599-badf-f82ea31a4a0c/09112b2a-91b8-4654-a16d-4de527b2917b/42.jpg?w=690&amp;auto=format" alt="2015 Maruti Baleno DELTA PETROL 1.2, Manual, 88,342 km, Petrol Car" class="_4x0mJ">
+                                                            </span><span class="_3d-8-">
+                                                                Listed Today
+                                                            </span>
+                                                        </div>
+                                                        <div class="_2z-Yu">
+                                                            <div class="_1mlAq">
+                                                                <h3 class="_2lmIw">
+                                                                    2015 Maruti Baleno
+                                                                </h3>
+                                                                <div class="_1LNXN">
+                                                                    <button>
+                                                                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <ul class="_1hOnS">
+                                                                <li>DELTA PETROL 1.2</li>
+                                                                <li class="_1aIyR"></li>
+                                                                <li>Manual</li>
+                                                            </ul>
+                                                            <ul class="_13yb6">
+                                                                <li>88,342 km</li>
+                                                                <li>1st Owner</li>
+                                                                <li>Petrol</li>
+                                                                <li>HR-26</li>
+                                                            </ul>
+                                                            <div>
+                                                                <div class="WNwWR">
+                                                                    <div class="_1Em-A">
+                                                                        <strong>₹9,208/month</strong>
+                                                                        <span class="_2JX5N"> 
+                                                                            Zero down payment
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="_18ToE">
+                                                                        <span>₹4,71,000</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="_351jJ">
+                                                                    <span class="_3DYbK">
+                                                                        <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"> -->
+                                                                        M3M Urbana, Golf Course Ext., Gurugram
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="slideBox _3aNnc">
+                                                <div class="_9s0df">
+                                                    <a href="#" target="_blank" class="_2kfVy">
+                                                        <div class="align-self-center _1-sP-">
+                                                            <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                <img src="https://fastly-production.24c.in/hello-ar/dev/uploads/66238d1c570134f90740e8c0/d3fc1178-319f-4d06-8553-aa374e8b25f9/slot/10194988704-cac7f629000145c9b3f197279f3e5924-Exterior-7.jpg?w=690&amp;auto=format" alt="2023 Hyundai NEW I20 ASTA (O) 1.2 MT, Manual, 6,800 km, Petrol Car" class="_4x0mJ">
+                                                            </span>
+                                                            <span class="_3d-8-">Listed Today
+
+                                                            </span>
+                                                        </div>
+                                                        <div class="_2z-Yu">
+                                                            <div class="_1mlAq">
+                                                                <h3 class="_2lmIw">
+                                                                    2023 Hyundai NEW I20
+                                                                </h3>
+                                                                <div class="_1LNXN">
+                                                                    <button>
+                                                                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <ul class="_1hOnS">
+                                                                <li>ASTA (O) 1.2 MT</li>
+                                                                <li class="_1aIyR"></li>
+                                                                <li>Manual</li>
+                                                            </ul>
+                                                            <ul class="_13yb6"><li>
+                                                                6,800 km</li>
+                                                                <li>1st Owner</li>
+                                                                <li>Petrol</li>
+                                                                <li>HR-98</li>
+                                                            </ul>
+                                                            <div>
+                                                                <div class="WNwWR">
+                                                                    <div class="_1Em-A">
+                                                                        <strong>₹18,273/month</strong>
+                                                                        <span>₹18,768/month</span>
+                                                                        <span class="_2JX5N"> 
+                                                                            Zero down payment
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="_18ToE">
+                                                                        <span>₹9,60,000</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="_351jJ">
+                                                                    <span class="_3DYbK">
+                                                                        <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"> -->
+                                                                        M3M Urbana, Golf Course Ext., Gurugram
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="slideBox _3aNnc">
+                                                <div class="_9s0df">
+                                                    <a href="#" target="_blank" class="_2kfVy">
+                                                        <div class="align-self-center _1-sP-">
+                                                            <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                <img src="../static/img/baleno.jpg" alt="2023 Hyundai NEW I20 ASTA (O) 1.2 MT, Manual, 6,800 km, Petrol Car" class="_4x0mJ">
+                                                            </span>
+                                                            <span class="_3d-8-">Listed Today
+
+                                                            </span>
+                                                        </div>
+                                                        <div class="_2z-Yu">
+                                                            <div class="_1mlAq">
+                                                                <h3 class="_2lmIw">
+                                                                    2017 Maruti Baleno
+                                                                </h3>
+                                                                <div class="_1LNXN">
+                                                                    <button>
+                                                                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <ul class="_1hOnS">
+                                                                <li>DELTA PETROL 1.2</li>
+                                                                <li class="_1aIyR"></li>
+                                                                <li>Manual</li>
+                                                            </ul>
+                                                            <ul class="_13yb6">
+                                                                <li>82,487 km</li>
+                                                                <li>1st Owner</li>
+                                                                <li>Petrol</li>
+                                                                <li>HR-26</li>
+                                                            </ul>
+                                                            <div>
+                                                                <div class="WNwWR">
+                                                                    <div class="_1Em-A">
+                                                                        <strong>₹10,010/month</strong>
+                                                                        <span class="_2JX5N"> 
+                                                                            Zero down payment
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="_18ToE">
+                                                                        <span>
+                                                                            ₹5,12,000
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="_351jJ">
+                                                                    <span class="_3DYbK">
+                                                                        <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"> -->
+                                                                        M3M Urbana, Golf Course Ext., Gurugram
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="slideBox _3aNnc">
+                                                <div class="_9s0df">
+                                                    <a href="#" target="_blank" class="_2kfVy">
+                                                        <div class="align-self-center _1-sP-">
+                                                            <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                <img src="../static/img/i10.jpg" alt="2023 Hyundai NEW I20 ASTA (O) 1.2 MT, Manual, 6,800 km, Petrol Car" class="_4x0mJ">
+                                                            </span>
+                                                            <span class="_3d-8-">Listed Today
+
+                                                            </span>
+                                                        </div>
+                                                        <div class="_2z-Yu">
+                                                            <div class="_1mlAq">
+                                                                <h3 class="_2lmIw">
+                                                                    2012 Hyundai i10
+                                                                </h3>
+                                                                <div class="_1LNXN">
+                                                                    <button>
+                                                                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <ul class="_1hOnS">
+                                                                <li>ERA 1.1</li>
+                                                                <li class="_1aIyR"></li>
+                                                                <li>Manual</li>
+                                                            </ul>
+                                                            <ul class="_13yb6">
+                                                                <li>7,764 km</li>
+                                                                <li>1st Owner</li>
+                                                                <li>Petrol</li>
+                                                                <li>HR-26</li>
+                                                            </ul>
+                                                            <div>
+                                                                <div class="WNwWR">
+                                                                    <div class="_1Em-A">
+                                                                        <strong>
+                                                                            ₹7,041/month
+                                                                        </strong>
+                                                                        <span class="_2JX5N"> 
+                                                                            Zero down payment
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="_18ToE">
+                                                                        <span>
+                                                                            ₹2,12,000
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="_351jJ">
+                                                                    <span class="_3DYbK">
+                                                                        <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"> -->
+                                                                        M3M Urbana, Golf Course Ext., Gurugram
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="slideBox _3aNnc">
+                                                <div class="_9s0df">
+                                                    <a href="#" target="_blank" class="_2kfVy">
+                                                        <div class="align-self-center _1-sP-">
+                                                            <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                <img src="../static/img/baleno.jpg" alt="2023 Hyundai NEW I20 ASTA (O) 1.2 MT, Manual, 6,800 km, Petrol Car" class="_4x0mJ">
+                                                            </span>
+                                                            <span class="_3d-8-">Listed Today
+
+                                                            </span>
+                                                        </div>
+                                                        <div class="_2z-Yu">
+                                                            <div class="_1mlAq">
+                                                                <h3 class="_2lmIw">
+                                                                    2019 Maruti Baleno
+                                                                </h3>
+                                                                <div class="_1LNXN">
+                                                                    <button>
+                                                                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <ul class="_1hOnS">
+                                                                <li>ALPHA CVT PETROL 1.2</li>
+                                                                <li class="_1aIyR"></li>
+                                                                <li>Automatic</li>
+                                                            </ul>
+                                                            <ul class="_13yb6">
+                                                                <li>30,586 km</li>
+                                                                <li>2nd Owner</li>
+                                                                <li>Petrol</li>
+                                                                <li>HR-26</li>
+                                                            </ul>
+                                                            <div>
+                                                                <div class="WNwWR">
+                                                                    <div class="_1Em-A">
+                                                                        <strong>
+                                                                            ₹14,819/month
+                                                                        </strong>
+                                                                        <span class="_2JX5N"> 
+                                                                            Zero down payment
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="_18ToE">
+                                                                        <span>
+                                                                            ₹7,58,000
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="_351jJ">
+                                                                    <span class="_3DYbK">
+                                                                        <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"> -->
+                                                                        M3M Urbana, Golf Course Ext., Gurugram
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="slideBox _3aNnc">
+                                                <div class="_9s0df">
+                                                    <a href="#" target="_blank" class="_2kfVy">
+                                                        <div class="align-self-center _1-sP-">
+                                                            <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                                <img src="../static/img/i10.jpg" alt="2023 Hyundai NEW I20 ASTA (O) 1.2 MT, Manual, 6,800 km, Petrol Car" class="_4x0mJ">
+                                                            </span>
+                                                            <span class="_3d-8-">Listed Today
+
+                                                            </span>
+                                                        </div>
+                                                        <div class="_2z-Yu">
+                                                            <div class="_1mlAq">
+                                                                <h3 class="_2lmIw">
+                                                                    2016 Hyundai Grand i10
+                                                                </h3>
+                                                                <div class="_1LNXN">
+                                                                    <button>
+                                                                        <img src="https://assets.cars24.com/production/c2b-website/240420160214/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <ul class="_1hOnS">
+                                                                <li>MAGNA 1.2 KAPPA VTVT</li>
+                                                                <li class="_1aIyR"></li>
+                                                                <li>Manual</li>
+                                                            </ul>
+                                                            <ul class="_13yb6">
+                                                                <li>43,682 km</li>
+                                                                <li>1st Owner</li>
+                                                                <li>Petrol</li>
+                                                                <li>HR-26</li>
+                                                            </ul>
+                                                            <div>
+                                                                <div class="WNwWR">
+                                                                    <div class="_1Em-A">
+                                                                        <strong>
+                                                                            ₹6,784/month
+                                                                        </strong>
+                                                                        <span class="_2JX5N"> 
+                                                                            Zero down payment
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="_18ToE">
+                                                                        <span>
+                                                                            ₹3,47,000
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="_351jJ">
+                                                                    <span class="_3DYbK">
+                                                                        <!-- <img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/240420160214/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"> -->
+                                                                        M3M Urbana, Golf Course Ext., Gurugram
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="_1GuJT">
+                                    <button id="" data-title="" type="button" class="btn _2iiQB _3qpfi">
+                                        {% if user.is_authenticated %}
+                                            <a href="{% url 'delhi' %}" style="color: white;">VIEW all CARS</a>
+                                        {% else %}
+                                            <span onclick="alert('Please login to the website')" style="cursor: pointer; color: white;">VIEW all CARS</span>
+                                        {% endif %}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                                                            
+
+                                                                    <!-- new template -->
+                                                              
+                                                                            <!-- <h2 class="_3york">Cars across New Delhi</h2> -->
+                                                                            <section class="section" id="trainers">
+                                                                                <div class="container">
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-6 offset-lg-3">
+                                                                                            <div class="section-heading">
+                                                                                                <h2>Featured <em>Cars</em></h2>
+                                                                                                <img src="../static/img/line-dec.png" alt="">
+                                                                                                <p>You can get more details by reading this caption about car information.</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-4">
+                                                                                            <div class="trainer-item">
+                                                                                                <div class="image-thumb">
+                                                                                                    <img src="../static/img/product-1-720x480.jpg" alt="">
+                                                                                                </div>
+                                                                                                <div class="down-content">
+                                                                                                    <span>
+                                                                                                        <del><sup>$</sup>11999 </del> &nbsp; <sup>$</sup>11779
+                                                                                                    </span>
+                                                                        
+                                                                                                    <h4>Audi</h4>
+                                                                        
+                                                                                                    <p>
+                                                                                                        <i class="fa fa-dashboard"></i> 130 000km &nbsp;&nbsp;&nbsp;
+                                                                                                        <i class="fa fa-cube"></i> 1800 cc &nbsp;&nbsp;&nbsp;
+                                                                                                        <i class="fa fa-cog"></i> Manual &nbsp;&nbsp;&nbsp;
+                                                                                                    </p>
+                                                                        
+                                                                                                    <ul class="social-icons">
+                                                                                                        <li><a href="#">+ View Car</a></li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-4">
+                                                                                            <div class="trainer-item">
+                                                                                                <div class="image-thumb">
+                                                                                                    <img src="../static/img/product-2-720x480.jpg" alt="">
+                                                                                                </div>
+                                                                                                <div class="down-content">
+                                                                                                    <span>
+                                                                                                        <del><sup>$</sup>11999 </del> &nbsp; <sup>$</sup>11779
+                                                                                                    </span>
+                                                                        
+                                                                                                    <h4>BMW</h4>
+                                                                        
+                                                                                                    <p>
+                                                                                                        <i class="fa fa-dashboard"></i> 130 000km &nbsp;&nbsp;&nbsp;
+                                                                                                        <i class="fa fa-cube"></i> 1800 cc &nbsp;&nbsp;&nbsp;
+                                                                                                        <i class="fa fa-cog"></i> Manual &nbsp;&nbsp;&nbsp;
+                                                                                                    </p>
+                                                                        
+                                                                                                    <ul class="social-icons">
+                                                                                                        <li><a href="#">+ View Car</a></li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-4">
+                                                                                            <div class="trainer-item">
+                                                                                                <div class="image-thumb">
+                                                                                                    <img src="../static/img/product-3-720x480.jpg" alt="">
+                                                                                                </div>
+                                                                                                <div class="down-content">
+                                                                                                    <span>
+                                                                                                        <del><sup>$</sup>11999 </del> &nbsp; <sup>$</sup>11779
+                                                                                                    </span>
+                                                                        
+                                                                                                    <h4>MAZDA</h4>
+                                                                        
+                                                                                                    <p>
+                                                                                                        <i class="fa fa-dashboard"></i> 130 000km &nbsp;&nbsp;&nbsp;
+                                                                                                        <i class="fa fa-cube"></i> 1800 cc &nbsp;&nbsp;&nbsp;
+                                                                                                        <i class="fa fa-cog"></i> Manual &nbsp;&nbsp;&nbsp;
+                                                                                                    </p>
+                                                                        
+                                                                                                    <ul class="social-icons">
+                                                                                                        <li><a href="#">+ View Car</a></li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                        
+                                                                                    <br>
+                                                                        
+                                                                                    <div class="main-button text-center">
+                                                                                        <!-- <a href="#">View Cars</a> -->
+                                                                                    </div>
+                                                                                </div>
+                                                                            </section>
+                                
+                                                                <!-- new template -->
+                                                                <!-- Testimonial Section Begin -->
+    <section class="testimonial spad" style="width: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title testimonial-title">
+                        <span>Testimonials</span>
+                        <h2>What People Say About Us</h2>
+                        <!-- <p>Our customers are our biggest supporters. What do they think of us? Lorem</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="testimonial__slider owl-carousel">
+                    <div class="col-lg-6">
+                        <div class="testimonial__item">
+                            <div class="testimonial__item__author">
+                                <div class="testimonial__item__author__pic">
+                                    <img src="../static/testimonial/testimonial-1.png" alt="">
+                                </div>
+                                <div class="testimonial__item__author__text">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h5>Shivam Tiwari /<span> Manager </span></h5>
+                                </div>
+                            </div>
+                            <p>I want to reccommended to all who want to purchase the car in future this is mindblowing car deelership website</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="testimonial__item">
+                            <div class="testimonial__item__author">
+                                <div class="testimonial__item__author__pic">
+                                    <img src="../static/testimonial/testimonial-2.png" alt="">
+                                </div>
+                                <div class="testimonial__item__author__text">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h5>Punam /<span> Marketing Manager</span></h5>
+                                </div>
+                            </div>
+                            <p>This is a great website for car deelership my experience is wonderfull</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="testimonial__item">
+                            <div class="testimonial__item__author">
+                                <div class="testimonial__item__author__pic">
+                                    <img src="../static/testimonial/testimonial-1.png" alt="">
+                                </div>
+                                <div class="testimonial__item__author__text">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h5>Shivam Tiwari /<span> Manager</span></h5>
+                                </div>
+                            </div>
+                            <p>I want to reccommended to all who want to purchase the car in future this is mindblowing car deelership website</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="testimonial__item">
+                            <div class="testimonial__item__author">
+                                <div class="testimonial__item__author__pic">
+                                    <img src="../static/testimonial/testimonial-2.png" alt="">
+                                </div>
+                                <div class="testimonial__item__author__text">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h5>Punam /<span> Marketing Manager</span></h5>
+                                </div>
+                            </div>
+                            <p>This is a great website for car deelership my experience is wonderfull</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section End -->
+
+
+    <!-- new template -->
+    <div class="container _37MYr">
+        <h2 class="_3york">CAR Deelership in the news</h2>
+        <div class="oddIx">
+            <div class="_73XSj">
+                <button type="button" class="slick-prev _1KfL7">Previous</button>
+                <div class="_1gddD" style="gap: 24px;">
+                    <div class="slideBox _3aNnc">
+                        <div class="_27g1y">
+                            <div class="P5KXI">
+                                <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                    <img src="../static/img/20EUROPE-MAIN_i.jpg" alt="CARS24 to Redefine Auto Industry">
+                                </span>
+                            </div>
+                            <div class="Q1G_H">
+                                <p>CARS to Redefine Auto Industry: 100 Tech Experts on Board</p>
+                                <span>26 October 2023</span>
+                                <a>
+                                    <img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/240422154403/js/4c33768dc2869197d8280dbde6ec7ff2.svg" alt="arrow" style="transform: rotate(0deg);">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slideBox _3aNnc">
+                        <div class="_27g1y">
+                            <div class="P5KXI">
+                                <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                    <img src="../static/img/gettyimages-157735154-612x612.jpg">
+                                </span>
+                            </div>
+                            <div class="Q1G_H">
+                                <p>87 PERCENT INDIANS CHOOSE PETROL-POWERED CARS THIS FESTIVE SEASON: CARS REPORT</p>
+                                <span>18 November 2023</span>
+                                <a>
+                                    <img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/240422154403/js/4c33768dc2869197d8280dbde6ec7ff2.svg" alt="arrow" style="transform: rotate(0deg);"> 
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more slideBox elements with images here -->
+                </div>
+                <button type="button" class="slick-next _11pU2">Next</button>
+            </div>
+        </div>
+    </div>
+
+<!-- car image -->
+
+<div class="section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Selling a car? We’re buying!</h2>
+                <p> Get up to 
+                    <span>₹20,000
+            
+                </span> 
+                when you sell and buy your next car from us.</p>
+                
+            </div>
+            <div class="col-md-6">
+               <!-- <img src="../static/img/carimage.png"> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="_3BCvI">
+    <div class="container">
+    <div class="_6asSk">
+    <h2>Selling a car? We’re buying!</h2>
+    <p> Get up to 
+        <span>₹20,000
+
+    </span> 
+        when you sell and buy your next car from us.</p>
+        <button id="" data-title="" type="button" class="btn  _2iiQB _3qpfi ">get car price </button>
+    </div>
+</div>
+<div class="_3jxq1">
+
+</div>
+</div> -->
+
+
+
+<!-- footer section -->
+<!-- Footer Section Begin -->
+<footer class="footer set-bg" data-setbg="/static/img/footer-bg.jpg" styl">
+    <div class="container" style="border: none;">
+        <div class="footer__contact">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="footer__contact__title">
+                        <h2>Contact Us Now!</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="footer__contact__option">
+                        <div class="option__item"><i class="fa fa-phone"></i> (+12) 345 678 910</div>
+                        <div class="option__item email"><i class="fa fa-envelope-o"></i> punyapal@gmail.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="footer__about">
+                    <div class="footer__logo">
+                        <a href="#"><img src="../static/img/footer-logo.png" alt=""></a>
+                    </div>
+                    <p>Any questions? Let us know in store at 625 Gloria Union, California, United Stated or call us
+                        on (+1) 96 123 8888</p>
+                    <div class="footer__social">
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google"></i></a>
+                        <a href="#" class="skype"><i class="fa fa-skype"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 offset-lg-1 col-md-3">
+                <div class="footer__widget">
+                    <h5>Infomation</h5>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Purchase</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Payemnt</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Shipping</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Return</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3">
+                <div class="footer__widget">
+                    <h5>Infomation</h5>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Hatchback</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Sedan</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> SUV</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Crossover</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer__brand">
+                    <h5>Top Brand</h5>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Abarth</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Acura</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Alfa Romeo</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Audi</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> BMW</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Chevrolet</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Ferrari</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Honda</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <div class="footer__copyright__text">
+            <!-- <p style="color: white;">Copyright &copy;<script>document.write(new Date().getFullYear());
+            </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true">
+
+            </i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        </p> -->
+        </div>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+<!-- Search Begin -->
+<div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">+</div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Search here.....">
+        </form>
+    </div>
+</div>
+<!-- Search End -->`
+
+<!-- Optional JavaScript -->
+
+                                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                                <!-- js file call -->
+                                <script src="{% static 'js/input.js' %}"></script>
+
+                                <!-- slck javascript for slick button -->
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                               <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+
+                               <!-- for dropdown -->
+                               <script>
+                                $(document).ready(function(){
+                                    // Initialize Bootstrap dropdown
+                                    $('.dropdown-toggle').dropdown();
+                                });
+                            </script>
+                            
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuTrigger = document.querySelector('.menu-trigger');
+            const mainNav = document.querySelector('.nav');
+            const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+    
+            // Function to toggle the visibility of the main navigation menu
+            function toggleMainNav() {
+                mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
+                // Hide all dropdown menus when toggling the main navigation menu
+                dropdownMenus.forEach(function(dropdownMenu) {
+                    dropdownMenu.style.display = 'none';
+                });
+            }
+    
+            // Function to toggle the visibility of dropdown menus
+            function toggleDropdownMenu(dropdownMenu) {
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+            }
+    
+            // Event listener for menu trigger button
+            menuTrigger.addEventListener('click', function() {
+                toggleMainNav();
+            });
+    
+            // Event listeners for dropdown toggle buttons
+            const dropdownToggleButtons = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggleButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const dropdownMenu = this.nextElementSibling;
+                    toggleDropdownMenu(dropdownMenu);
+                });
+            });
+        });
+    </script>
+                            
+
+
+                                 <!-- Js Plugins -->
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery.nice-select.min.js"></script>
+    <script src="../static/js/jquery-ui.min.js"></script>
+    <script src="../static/js/jquery.magnific-popup.min.js"></script>
+    <script src="../static/js/mixitup.min.js"></script>
+    <script src="../static/js/jquery.slicknav.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/dropdown.js"></script>
+
+
+
+
+
+                        </body>
+                    </html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Car Predict</title>
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css" type="text/css">
+  <link rel="stylesheet" href="../static/css/challan.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/carvaluation.css">
+    <link rel="stylesheet" href="../static/css/template.1.css" type="text/css">
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/734b025465.js" crossorigin="anonymous"></script>
+
+    
+      <style>
+        .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 100px; /* Center horizontally */
+      transform: translateX(-50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px !important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center !important;
+    margin-left: 28% !important;
+      
+  }
+        
+         </style>
+                   
+     
+    </head>
+<body>
+
+
+  
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky" style="background: black;">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="/" class="logo" style="color: white;">CAR<em> VALUE</em></a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li class="dropdown">
+                              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Buy a car</a>
+                            
+                              <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="{% url 'delhi' %}" style="color: black;">Used car Delhi</a>
+                                  <a class="dropdown-item" href="{% url 'mumbai' %}" style="color: black;">Used car Mumbai</a>
+                                  <a class="dropdown-item" href="{% url 'banglore' %}" style="color: black;">Used car Bangalore</a>
+                                  <a class="dropdown-item" href="{% url 'ahemdabad' %}" style="color: black;">Used car Ahmedabad</a>
+                                  <a class="dropdown-item" href="{% url 'surat' %}" style="color: black;">Used car Surat</a>
+                                  <!-- <a class="dropdown-item" href="#" style="color: black;">Used car Gujarat</a> -->
+                              </div>
+                          </li>
+
+
+                          <li class="dropdown">
+                              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sell a car</a>
+                            
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{% url 'carvaluation' %}" style="color: black;">Used car valuation</a>
+                                  
+                              </div>
+                          </li>
+
+
+                          <li class="dropdown">
+                              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Car finance</a>
+                            
+                              <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="{% url 'loan' %}" style="color: black;">Used car loan</a>
+                                  <!-- <a class="dropdown-item" href="#" style="color: black;">Used car loan eligiblitiy</a> -->
+                                  <!-- <a class="dropdown-item" href="#" style="color: black;">Used car loan interest rate</a> -->
+                                  <a class="dropdown-item" href="{% url 'emicalculator' %}" style="color: black;">Used car EmI calculator</a>
+                                  <!-- <a class="dropdown-item" href="#" style="color: black;">FAQ</a> -->
+                                  <!-- <a class="dropdown-item" href="#" style="color: black;">Terms</a> -->
+                              </div>
+                          </li>
+
+
+                          <li><a href="{% url 'blog' %}">Blog</a></li> 
+
+
+                          <li class="dropdown">
+                              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Car Service</a>
+                            
+                              <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="{% url 'challan' %}" style="color: black;">View and pay challan</a>
+                                  <!-- <a class="dropdown-item" href="{% url 'blog' %}" style="color: black;">Check Vehicle details</a> -->
+                              </div>
+                          </li>
+                          <li><a href="{% url 'signup' %}">Login</a>
+                          </li>
+                          <li><a href="#"></a></li>    
+                      </ul>       
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <!-- <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div> -->
+    <div class="carousel-inner" style="margin-top: 80px;">
+      <div class="carousel-item active">
+        <img src="../static/img/slider.webp" class="d-block w-100" alt="...">
+      </div>
+      <!-- <div class="carousel-item active">
+        <img src="images/aaaa.jpg" class="d-block w-100" alt="...">
+      </div>
+  
+    
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button> -->
+  </div>
+
+  <!-- ------------------------------------------------------------- -->
+
+
+  <div class="marquee-w">
+  
+    <div class="marquee">
+      <span><i class="fa-solid fa-car"></i>  Car pick & payment  <i class="fa-solid fa-car"></i>  Great price  <i class="fa-solid fa-car"></i>   Hassle-free documentation  <i class="fa-solid fa-car"></i>  Instant payment  <i class="fa-solid fa-car"></i>  Sell from anywhere  <i class="fa-solid fa-car"></i>  Quick Selling process  <i class="fa-solid fa-car"></i>&nbsp;&nbsp;&nbsp; </span>
+  </div>
+  
+   </div>
+      
+
+  <!-- -------------------------------------------------------------------- -->
+
+
+    <div id="services service1">
+        <div class="container">
+          <h1 class="sab"><br>Process of selling used car<br></h1>
+
+          <div class="services-list service">
+
+            <div>
+            
+               <img src="../static/img/pic1.jpg">
+               <h2><br>Car pick up & payment</h2>
+               <p>We will transfer the amount directly to your<br> bank account before your car is picked up</p>
+             
+            </div>
+    
+            <div>
+              <img src="../static/img/pic2.jpg">
+               <h2><br>Get price online</h2>
+                <p>Answer some questions about your car to<br> help us understand its condition</p>
+              
+            </div>
+    
+            <div>
+              <img src="../static/img/pic3.jpg">
+              <h2><br>Car inspection</h2>
+              <p> Our car expert will physically verify your car’s <br>condition and give you the final offer</p>
+            
+            </div>
+    
+          </div>
+        </div>
+      </div>
+
+
+
+      <!------------------------------------2---------------------------------------------------->
+
+
+       <div id="services2 service1">
+        <div class="container">
+          <h1 class="sab1"><br>Why sell car to CARS?<br></h1>
+
+          <div class="services-list2 service">
+
+            <div class="divs">
+            
+               <img id="p1" src="../static/img/p4.svg">
+               <h2><br>Great<br> price</h2>
+               <p>Largest dealer network + Smart <br>AI Pricing Engine = great deal <br>for your car</p>
+             
+            </div>
+    
+            <div class="divs">
+              <img id="p1" src="../static/img/p3.svg">
+               <h2><br>Instant<br>payment</h2>
+                <p> The amount is transferred <br>directly to your bank account <br>within minutes</p>
+              
+            </div>
+    
+            <div class="divs">
+              <img id="p1" src="../static/img/p1.svg">
+              <h2><br>Hassle-free<br> documentation</h2>
+              <p>  Documentation and RC <br>transfers can take months! We’ll <br>handle it all</p>
+            
+            </div>
+    
+            <div class="divs">
+              <img id="p1" src="../static/img/p2.svg">
+              <h2><br>Sell from<br> anywhere</h2>
+              <p>From inspection to payment, <br>everything right from your <br>doorstep!</p>
+            
+            </div>
+    
+    
+    
+          </div>
+        </div>
+      </div>  
+    
+    <!------------------------------3-------------------------------------------------->
+     
+     <div id="services3">
+      <div class="container">
+        <h1 class="sab1"><br>Process of selling used car<br></h1>
+
+        <div class="list3">
+
+          <div>
+          
+             <img src="../static/img/v1.jpg">
+             <p id="paraa1">05 june 2023</p>
+             <h2><br>Hassle-free selling process</h2>
+            <p id="paraa">Got a great price for my car just sit back and<br>Car24 will take care of everything for you</p>
+            <h5><i class="fa-solid fa-user"></i>Navin Arya</h5>
+              <p id="paraa1"><i class="fa-solid fa-location-dot"></i>Bhopal madhya pradesh</p>
+          </div>
+  
+          <div>
+            <img src="../static/img/v2.jpg">
+            <p id="paraa1">22 march 2024</p>
+            <h2><br>Quick & easy process</h2>
+           <p id="paraa">I had a really great experience seling my car to<br>Car24 and the staff was extremely cooperative</p>
+           <h5><i class="fa-solid fa-user"></i>Ankit singh Bhatia</h5>
+             <p id="paraa1"><i class="fa-solid fa-location-dot"></i>indore madhya pradesh</p>
+          </div>
+  
+          <div>
+            <img src="../static/img/v4.jpg">
+            <p id="paraa1">26 nav 2022</p>
+             <h2><br>Selling my car was so easy</h2>
+            <p id="paraa">Sold my car at CARS- Lorem ipsum<br>. </p>
+            <h5><i class="fa-solid fa-user"></i>Anmol grover</h5>
+              <p id="paraa1"><i class="fa-solid fa-location-dot"></i>delhi </p>
+          </div>
+
+  
+        </div>
+
+
+        <div class="list3">
+
+          <div>
+          
+             <img src="../static/img/v3.jpg">
+             <p id="paraa1">12 jan 2024</p>
+             <h2><br>It will handle everything</h2>
+            <p id="paraa">We will transfer the amount directly to your<br> bank account before your car is picked up</p>
+            <h5><i class="fa-solid fa-user"></i>Om Dubey</h5>
+              <p id="paraa1"><i class="fa-solid fa-location-dot"></i>Noida </p>
+          </div>
+  
+          <div>
+            <img src="../static/img/v5.jpg">
+            <p id="paraa1">31 dec 2023</p>
+            <h2><br>Quick Selling process</h2>
+           <p id="paraa">We will transfer the amount directly to your<br> bank account before your car is picked up</p>
+           <h5><i class="fa-solid fa-user"></i>Samay Aaditya</h5>
+             <p id="paraa1"><i class="fa-solid fa-location-dot"></i>Mumbai Maharastra</p>
+          </div>
+  
+          <div>
+            <img src="../static/img/6.jpg">
+            <p id="paraa1">01 April 2023</p>
+            <h2><br>Best Place to sell Car</h2>
+           <p id="paraa">We will transfer the amount directly to your<br> bank account before your car is picked up</p>
+           <h5><i class="fa-solid fa-user"></i>Varun Deverkonda</h5>
+             <p id="paraa1"><i class="fa-solid fa-location-dot"></i>munnar kerla</p>
+          </div>
+
+  
+        </div>
+      </div>
+      <button><a href="https://sanchit123.streamlit.app/"> More..</a></button>
+    </div> 
+
+<!-----------------------4--------------------------------------------------------->
+
+ <div class="marquee-w">
+  
+  <div class="marquee">
+    <span><i class="fa-solid fa-car"></i>  Car pick & payment  <i class="fa-solid fa-car"></i>  Great price  <i class="fa-solid fa-car"></i>   Hassle-free documentation  <i class="fa-solid fa-car"></i>  Instant payment  <i class="fa-solid fa-car"></i>  Sell from anywhere  <i class="fa-solid fa-car"></i>  Quick Selling process  <i class="fa-solid fa-car"></i>&nbsp;&nbsp;&nbsp; </span>
+</div>
+
+ </div> 
+
+ <!------------------------------------------------------------------------------->
+
+ <div class="selling">
+  
+  <div class="c1">
+
+      <div class="con1">
+      <h1>The Simplest<br>Way To Sell!</h1>
+      <button>Get Price</button>
+      </div>
+
+    <div class="car1">
+     <img src="../static/img/c1.png">
+   </div>
+
+</div>
+  </div>  
+
+<!------------------------------------------------------------------->
+
+ <section id="section-faq" class="section-faq">
+  <h1>Frequetally Asked Question!!</h1>
+
+<ul>
+   <li>
+   <div class="question">
+    <span>Why is cars best place to sell my car online ? </span>
+    <Span class="icon"><i class="fa-solid fa-plus" id="pp"></i> <i class="fa-solid fa-minus" id="mm"></i></Span> 
+   
+    </div>
+
+    <div class="answer">
+    <span>Not only do we offer a great price on each car we buy with Instant Payment, we ensure the entire car selling exeprience is a hassle-free. The entire process can be completed online, even the physical inspection of car is done at your home as per the date and time decided by you. We also offer full after sales support to ensure you have zero liability until the RC transfer is complete.</span>
+    </div>
+
+   </li>
+
+
+   <li>
+    <div class="question">
+     <span>Can I sell a car that has an ongoing loan on it ? </span>
+     <Span class="icon"><i class="fa-solid fa-plus"></i></Span> 
+     </div>
+ 
+     <div class="answer">
+     <span>Yes you can. Based on the valuation of your car, CARS  will handle the loan closures on your behalf, and will transfer the remaining balance to your account.</span>
+     </div>
+ 
+    </li>
+ 
+
+    
+    <li>
+      <div class="question">
+       <span>Is the car owner required to be present at the time of car pick up & inspection ? </span>
+       <span class="icon"><i class="fa-solid fa-plus"></i></span> 
+       </div>
+   
+       <div class="answer">
+       <span>No. Anyone can be present during the inspection with the required documents and the car keys. The owner only needs to be present to sign documents at the time of sale.</span>
+       </div>
+   
+      </li>
+   
+
+      
+      <li>
+        <div class="question">
+         <span>Do I need to be present at the RTO for RC transfer ? </span>
+         <Span class="icon"><i class="fa-solid fa-plus"></i></Span> 
+         </div>
+     
+         <div class="answer">
+         <span>We take care of all documentation, including the free RC transfer. In case there is any mismatch in RC like signature mismatch, you may need to be present at the RTO. Some States also require the previous owner to be present at the RTO in order to register the car with the new owner, also known as 'Party Peshi'. A CARS24 representative will be present with you throughout the process.</span>
+         </div>
+     
+        </li>
+     
+     
+        <li>
+          <div class="question">
+           <span>How long does the RC transfer take? </span>
+           <Span class="icon"><i class="fa-solid fa-plus"></i></Span> 
+           </div>
+       
+           <div class="answer">
+           <span>The timeline of the RC transfer might vary depending on the availability of the prospective buyer and the RTO requirements. However, you don’t need to worry about it at all! All our customers are covered under the CARS24 Seller Protection Policy, which means until the RC transfer of your car is complete, we take full responsibility for the safety of your vehicle. Once the ownership has been transferred, we will send you an email with the proof of RC transfer.</span>
+           </div>
+       
+          </li>
+       
+
+          
+          <li>
+            <div class="question">
+             <span>Does CARS  buy commercial cars ? </span>
+             <Span class="icon"><i class="fa-solid fa-plus"></i></Span> 
+             </div>
+         
+             <div class="answer">
+             <span>Unfortunately, we currently do not deal in commercial vehicles.</span> 
+              </div>
+         
+            </li>
+         
+         
+
+
+</ul>
+
+</section> 
+ 
+
+<!-- footer section -->
+<!-- Footer Section Begin -->
+<footer class="footer set-bg" data-setbg="/static/img/footer-bg.jpg" styl">
+  <div class="container" style="border: none;">
+      <div class="footer__contact">
+          <div class="row">
+              <div class="col-lg-6 col-md-6">
+                  <div class="footer__contact__title">
+                      <h2>Contact Us Now!</h2>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="footer__contact__option">
+                      <div class="option__item"><i class="fa fa-phone"></i> (+12) 345 678 910</div>
+                      <div class="option__item email"><i class="fa fa-envelope-o"></i> punyapal@gmail.com</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-4 col-md-4">
+              <div class="footer__about">
+                  <div class="footer__logo">
+                      <a href="#"><img src="../static/img/footer-logo.png" alt=""></a>
+                  </div>
+                  <p>Any questions? Let us know in store at 625 Gloria Union, California, United Stated or call us
+                      on (+1) 96 123 8888</p>
+                  <div class="footer__social">
+                      <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                      <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                      <a href="#" class="google"><i class="fa fa-google"></i></a>
+                      <a href="#" class="skype"><i class="fa fa-skype"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-2 offset-lg-1 col-md-3">
+              <div class="footer__widget">
+                  <h5>Infomation</h5>
+                  <ul>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Purchase</a></li>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Payemnt</a></li>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Shipping</a></li>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Return</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-2 col-md-3">
+              <div class="footer__widget">
+                  <h5>Infomation</h5>
+                  <ul>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Hatchback</a></li>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Sedan</a></li>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> SUV</a></li>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Crossover</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+              <div class="footer__brand">
+                  <h5>Top Brand</h5>
+                  <ul>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Abarth</a></li>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Acura</a></li>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Alfa Romeo</a></li>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Audi</a></li>
+                  </ul>
+                  <ul>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> BMW</a></li>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Chevrolet</a></li>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Ferrari</a></li>
+                      <li><a href="#"><i class="fa fa-angle-right"></i> Honda</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      <div class="footer__copyright__text">
+          <!-- <p>Copyright &copy;<script>document.write(new Date().getFullYear());
+          </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true">
+
+          </i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+      </p> -->
+      </div>
+      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  </div>
+</footer>
+<!-- Footer Section End -->
+
+
+
+<!-- Bootstrap and jQuery Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- Script for manually closing Bootstrap dropdowns after click -->
+<script>
+    $(document).ready(function(){
+        $('.dropdown-toggle').on('click', function (e) {
+            var $el = $(this);
+            var $parent = $(this).parent();
+            var $openDropdown = $parent.find('.dropdown-menu');
+            // Close all dropdowns except the one clicked
+            $('.dropdown-menu').not($openDropdown).removeClass('show');
+            // Toggle the dropdown clicked
+            $openDropdown.toggleClass('show');
+            // Prevent default link action
+            return false;
+        });
+
+        // Close dropdowns when clicking outside
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.dropdown-toggle').length) {
+                $('.dropdown-menu').removeClass('show');
+            }
+        });
+    });
+</script>
+
+
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+      const menuTrigger = document.querySelector('.menu-trigger');
+      const mainNav = document.querySelector('.nav');
+      const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+
+      // Function to toggle the visibility of the main navigation menu
+      function toggleMainNav() {
+          mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
+          // Hide all dropdown menus when toggling the main navigation menu
+          dropdownMenus.forEach(function(dropdownMenu) {
+              dropdownMenu.style.display = 'none';
+          });
+      }
+
+      // Function to toggle the visibility of dropdown menus
+      function toggleDropdownMenu(dropdownMenu) {
+          dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+      }
+
+      // Event listener for menu trigger button
+      menuTrigger.addEventListener('click', function() {
+          toggleMainNav();
+      });
+
+      // Event listeners for dropdown toggle buttons
+      const dropdownToggleButtons = document.querySelectorAll('.dropdown-toggle');
+      dropdownToggleButtons.forEach(function(button) {
+          button.addEventListener('click', function() {
+              const dropdownMenu = this.nextElementSibling;
+              toggleDropdownMenu(dropdownMenu);
+          });
+      });
+  });
+</script>
+<script src="../static/js/jquery-3.3.1.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/jquery.slicknav.js"></script>
+<script src="../static/js/owl.carousel.min.js"></script>
+<script src="../static/js/main.js"></script>
+<script src="../static/js/dropdown.js"></script>
+</body>
+</html>

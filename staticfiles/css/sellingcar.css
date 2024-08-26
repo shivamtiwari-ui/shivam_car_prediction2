@@ -1,0 +1,55 @@
+._3BCvI {
+    padding: 68px 0 80px;
+    min-height: 520px;
+    background: #fff;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+._6asSk h2 {
+    margin-bottom: 16px;
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 60px;
+    color: #0059a3;
+}
+
+._6asSk p {
+    max-width: 416px;
+    padding-bottom: 44px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #465166;
+}
+
+._6asSk p span {
+    font-family: Lato;
+    font-weight: 600;
+}
+
+/* ._3jxq1 {
+    min-width: 632px;
+    height: 358px;
+    background: url(../img/carimage.png) no-repeat;
+    position: absolute;
+    right: -766px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1;
+} */
+
+._6asSk button {
+    border: 1px solid orange;
+    background: orange;
+    color: white;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 15px;
+}

@@ -1,0 +1,235 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="../static/css/signup.css">
+</head>
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    <h3>Signup page</h3>
+
+    <div class="container">
+        <form action="/signup/" method="post">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Create a username (Only letters and numbers)" required>
+            <br>
+
+            <label for="fname">FirstName</label>
+            <input type="text" id="fname" name="fname" placeholder="Enter Your First Name here.." required>
+            <br>
+
+            <label for="lname">LastName</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name..." required>
+            <br>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email here ..." required>
+            <br>
+
+            <label for="pass1">Password</label>
+            <input type="password" id="pass1" name="pass1" placeholder="Enter Your Password here..." required>
+            <br>
+
+            <label for="pass2">Conform Password</label>
+            <input type="password" id="pass2" name="pass2" placeholder="Enter Your Conform Password here..." required> 
+            <br>
+        
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+
+</body>
+</html> -->
+<!-- checking -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="../static/css/signup.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#signupForm").on("submit", function (e) {
+          e.preventDefault();
+          $.ajax({
+            type: "POST",
+            url: "/signup/",
+            data: $("#signupForm").serialize(),
+            success: function (response) {
+              if (response.success) {
+                alert(response.message); // Show success message in popup
+                window.location.href = "/signin/"; // Redirect to signin page
+              } else {
+                alert(response.message); // Show error message in popup
+              }
+            },
+            error: function (xhr, errmsg, err) {
+              alert("Error: " + xhr.status + ": " + xhr.responseText); // Show generic error message in popup
+            },
+          });
+        });
+      });
+    </script>
+       <style>
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: transparent;
+            width: 94%;
+        }
+        input::placeholder {
+            color: white;
+          }
+          button[type="submit"] {
+            padding: 10px;
+            background-color: black;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        label{
+            color: #fff;
+        }
+        a{
+            color: deepskyblue;
+        }
+        h3 {
+            margin-top: 0;
+            text-align: center;
+            color: white;
+        }
+        input {
+          color: white;
+        }
+        button{
+          border-radius: 10px;
+    background: transparent;
+    color: white;
+        }
+        
+        
+            </style>
+    
+  </head>
+  <body style="background: url(../static/img/car.jpg);">
+   
+
+    <div class="container" style="max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    background: transparent;
+    box-shadow: inset 5px 5px 11px rgba(0, 0, 0, 0.2), inset -5px -5px 11px rgba(255, 255, 255, 0.75)">
+    <h3>SIGNUP PAGE</h3>
+    <form id="signupForm" method="post">
+        {% csrf_token %}
+        <label for="username">Username</label>
+        <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Create a username (Only letters and numbers)"
+            required
+        /><br />
+
+        <label for="fname">FirstName</label>
+        <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Enter Your First Name here.."
+            required
+        /><br />
+
+        <label for="lname">LastName</label>
+        <input
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="Enter Your Last Name..."
+            required
+        /><br />
+
+        <label for="email">Email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter Your Email here ..."
+            required
+        /><br />
+
+        <label for="pass1">Password</label>
+        <div style="position: relative;">
+            <input
+                type="password"
+                id="pass1"
+                name="pass1"
+                placeholder="Enter Your Password here..."
+                required
+            />
+            <button type="button" class="toggle-password" data-target="pass1">Show</button>
+        </div><br />
+
+        <label for="pass2">Confirm Password</label>
+        <div style="position: relative;">
+            <input
+                type="password"
+                id="pass2"
+                name="pass2"
+                placeholder="Enter Your Confirm Password here..."
+                required
+            />
+            <button type="button" class="toggle-password" data-target="pass2">Show</button>
+        </div><br />
+
+        <button type="submit">Sign up</button>
+        <span><a href="{% url 'signin' %}">Already have an account? Login</a></span>
+    </form>
+</div>
+
+
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const togglePasswordButtons = document.querySelectorAll(".toggle-password");
+
+    togglePasswordButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const targetId = this.getAttribute("data-target");
+            const targetInput = document.getElementById(targetId);
+            
+            if (targetInput.type === "password") {
+                targetInput.type = "text";
+                this.textContent = "Hide";
+            } else {
+                targetInput.type = "password";
+                this.textContent = "Show";
+            }
+        });
+    });
+});
+
+    </script>
+  </body>
+</html>

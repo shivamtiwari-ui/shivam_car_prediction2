@@ -1,0 +1,402 @@
+/* Default styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.col {
+    flex: 1 1 300px; 
+    max-width: 100%; 
+}
+
+.small {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .gti {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+    width: 100%; 
+    max-width: 100px; 
+    height: 140px;
+    color: #fff;
+    font-family: var(--main-font);
+}
+.box img {
+    width: 20px;
+    height: 20px;
+}
+
+.box span {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.box strong {
+    font-size: 16px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .gti {
+        flex-direction: column;
+    }
+
+    .box {
+        margin-bottom: 10px;
+        max-width: none; 
+    }
+}
+
+
+.Banner {
+    background: linear-gradient(180deg, #141213, #2f2d2e);
+    padding: 50px 20px; 
+}
+.btext h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .btext p{
+    color: #f9f9f9;
+  }
+
+.col {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.content {
+    text-align: center;
+}
+
+.content .btext {
+    margin-bottom: 20px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* car loan  2nd section*/
+
+.car {
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.col {
+    flex: 1 1 300px; 
+    max-width: 100%; 
+}
+
+.Finance {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+._2FeT3 img {
+    max-width: 100%;
+    height: auto;
+}
+
+.choose {
+        margin-bottom: 40px;
+        font-family: var(--main-font);
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 46px;
+        color: #002441;
+        display: inline-block;
+}
+.choose>span{
+    color: orange;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column; 
+    }
+    
+    .col {
+        flex: 1 1 100%; 
+        margin: 10px 0; 
+    }
+}
+
+
+
+
+/* 3rd section creteria */
+
+#CF_ELIGIBILITY_CRITERIA {
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.col {
+    flex: 1 1 300px;
+    max-width: 100%;}
+
+.criteria-heading {
+        margin-bottom: 40px;
+        font-family: var(--main-font);
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 46px;
+        color: #002441;
+        display: inline-block;
+    
+}
+.criteria-heading>span{
+    color: orange;
+}
+
+.criteria-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.criteria-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.know-more-btn {
+    margin-top: 20px;
+}
+
+.more-info-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: orange;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .col {
+        flex: 1 1 100%; 
+    }
+}
+
+
+
+/* interest */
+
+#CF_INTEREST_RATES {
+    text-align: center;
+}
+
+.heading {
+    margin-bottom: 12px;
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 46px;
+    color: #002441;
+}
+.heading> span{
+    color: orange;
+}
+
+.Ipara {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.Ipara strong {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.Ipara p {
+    margin-bottom: 4px;
+    font-size: 16px;
+    line-height: 24px;
+    display: block;
+}
+
+
+.Ibtn {
+    margin-top: 20px;
+}
+.itextc{
+    display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 40px 40px;
+  gap: 40px 40px;
+}
+
+.Iimage {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Iimage img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: orange;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .col {
+        flex: 1 1 100%; 
+    }
+}
+
+
+/* faq questions */
+
+
+/* FAQ Section */
+.faq-section {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+/* Container */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* FAQ Content */
+.faq-content {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.faq-heading span {
+    color: #ff5733;
+}
+
+/* FAQ Items */
+.faq-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.faq-question img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* View All FAQs Button */
+.view-all-faqs {
+    display: inline-block;
+    font-size: 18px;
+    color: #ff5733;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.view-all-faqs:hover {
+    color: #e64400;
+}
+
+.col-12{
+width: -moz-available;
+}
