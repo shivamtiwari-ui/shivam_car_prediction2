@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from .info import *
+import dj_database_url
+from decouple import config
 import os
 
 
@@ -34,10 +36,9 @@ EMAIL_PORT = 587
 SECRET_KEY = 'django-insecure-2h#cib-=&ltp92x_3uzxt4(90gcpgjv-*5_m7$@qtw91x6@193'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['shivam-car-prediction2-13.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -85,11 +86,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# Database
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default=config('DATABASE_URL', default='sqlite:///db.sqlite3'))
 }
 
 
@@ -130,10 +136,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 
 # Default primary key field type
@@ -147,7 +155,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-ALLOWED_HOSTS = ['shivam-car-prediction2-11.onrender.com', 'localhost', '127.0.0.1']
+
+
 
 
 
