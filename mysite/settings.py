@@ -34,9 +34,9 @@ EMAIL_PORT = 587
 SECRET_KEY = 'django-insecure-2h#cib-=&ltp92x_3uzxt4(90gcpgjv-*5_m7$@qtw91x6@193'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['shivam-car-prediction2-15.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['shivam-car-prediction2-16.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -130,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
