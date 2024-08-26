@@ -147,6 +147,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+ALLOWED_HOSTS = ['shivam-car-prediction2-11.onrender.com', 'localhost', '127.0.0.1']
+
+
 
 
 
